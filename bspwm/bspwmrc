@@ -17,13 +17,11 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a "Brave-browser" desktop='^1' follow=on
 bspc rule -a "anytype" desktop='^2'
 
 ## AutoStart
 sxhkd &
 nitrogen --set-scaled $HOME/Pictures/Backgrounds/Sun\ Over\ Dunes.jpeg &
-nitrogen --restore &
 polybar &
 picom &
 greenclip daemon &
@@ -32,5 +30,3 @@ numlockx &
 discord --start-minimized &
 dunst &
 anytype &
-vboxmanage startvm "Main Server" &
-veracrypt --mount /home/ishank/EncPassDrive/EncPassDrive -k /home/ishank/EncPassKey
