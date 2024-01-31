@@ -17,11 +17,13 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+## Applications rule
 bspc rule -a "anytype" desktop='^2'
+bspc rule -a "Protonvpn-app" state=floating
 
 ## AutoStart
 sxhkd &
-nitrogen --set-scaled $HOME/Pictures/pinkblue.jpg &
+nitrogen --set-scaled $HOME/Pictures/pinkblue.jpg
 polybar &
 picom &
 greenclip daemon &
@@ -30,3 +32,4 @@ numlockx &
 discord --start-minimized &
 dunst &
 anytype &
+protonvpn-app &
