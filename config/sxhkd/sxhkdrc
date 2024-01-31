@@ -57,6 +57,10 @@ super + shift + c
 super + shift + {t,s,f}
 	bspc node -t {tiled,floating,fullscreen}
 
+# Flags
+super + shift + {p}
+	bspc node -g sticky
+
 #
 # focus/swap
 #
