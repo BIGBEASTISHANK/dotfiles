@@ -2,7 +2,7 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d         
+bspc monitor -d       
 
 # Set initial border color
 bspc config normal_border_color "#44475a"
@@ -27,7 +27,7 @@ nitrogen --set-scaled $HOME/Pictures/darkDear.jpg
 polybar &
 picom &
 greenclip daemon &
-blueman-applet &
+#blueman-applet &
 numlockx &
 discord --start-minimized &
 dunst &
