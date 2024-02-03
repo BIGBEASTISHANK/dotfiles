@@ -1,0 +1,22 @@
+#! /bin/sh
+
+############
+## System ##
+############
+picom &
+dunst &
+numlockx &
+/usr/lib/xfce-polkit/xfce-polkit &
+pgrep -x sxhkd > /dev/null || sxhkd &
+nitrogen --set-scaled $HOME/Pictures/darkDear.jpg
+
+#########
+## Bar ##
+#########
+polybar &
+#anytype &
+protonvpn-app &
+#blueman-applet &
+greenclip daemon &
+optimus-manager-qt &
+discord --start-minimized &

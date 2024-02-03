@@ -22,15 +22,4 @@ bspc rule -a "anytype" desktop='^2'
 bspc rule -a "Protonvpn-app" state=floating
 
 ## AutoStart
-sxhkd &
-nitrogen --set-scaled $HOME/Pictures/darkDear.jpg
-polybar &
-picom &
-greenclip daemon &
-#blueman-applet &
-numlockx &
-discord --start-minimized &
-dunst &
-protonvpn-app &
-/usr/lib/xfce-polkit/xfce-polkit &
-optimus-manager-qt &
+$HOME/.config/bspwm/startup
