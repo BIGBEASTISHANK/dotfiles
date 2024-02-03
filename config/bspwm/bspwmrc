@@ -31,7 +31,6 @@ greenclip daemon &
 numlockx &
 discord --start-minimized &
 dunst &
-anytype &
 protonvpn-app &
 /usr/lib/xfce-polkit/xfce-polkit &
 optimus-manager-qt &
