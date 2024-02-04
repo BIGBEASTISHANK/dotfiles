@@ -9,6 +9,7 @@ numlockx &
 /usr/lib/xfce-polkit/xfce-polkit &
 pgrep -x sxhkd > /dev/null || sxhkd &
 nitrogen --set-scaled $HOME/Pictures/darkDear.jpg
+alacritty -e sudo openvpn -c $HOME/ProtonVPN\ Config/us-free-123059.protonvpn.tcp.ovpn --auth-user-pass $HOME/ProtonVPN\ Config/userlogin.txt
 
 #########
 ## Bar ##
