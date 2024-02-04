@@ -22,4 +22,4 @@ bspc rule -a "anytype" desktop='^2'
 bspc rule -a "Protonvpn-app" state=floating
 
 ## AutoStart
-$HOME/.config/bspwm/startup
+$HOME/.config/bspwm/startup &
