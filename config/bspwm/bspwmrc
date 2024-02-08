@@ -18,8 +18,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 ## Applications rule
-bspc rule -a "anytype" desktop='^2'
-bspc rule -a "Protonvpn-app" state=floating
+bspc rule -a "stacer" state=floating
 
 ## AutoStart
 $HOME/.config/bspwm/startup &
