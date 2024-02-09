@@ -1,0 +1,16 @@
+#!/bin/sh
+
+while true; do
+	## Variables
+	battery_level=`acpi -b | grep -P -o '[0-9]+(?=%)'`
+	battery_status=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/state/{print $2}'`
+	
+	## IF battery is less then 25%
+	if [[ $battery_status == 'discharging' && $battery_level -le 25 ]]
+	then
+    	    notify-send "Battery low" "Battery level is ${battery_level}%!"
+	fi
+	
+	## Sleep for 5 sec
+	sleep 5;
+done

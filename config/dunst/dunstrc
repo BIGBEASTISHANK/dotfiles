@@ -70,7 +70,7 @@
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
     transparency = 1
 
-    # Draw a line of "separator_height" pixel height between two
+# Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
     separator_height = 1
@@ -157,7 +157,7 @@
     # Possible values are "left", "center" and "right".
     alignment = left
 
-    # Vertical alignment of message text and icon.
+    # Vertical alig$HOME/.config/dunst/notificationnment of message text and icon.
     # Possible values are "top", "center" and "bottom".
     vertical_alignment = center
 
@@ -434,3 +434,6 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+[play_sound]
+    summary = "*"
+    script = .config/dunst/notification.sh

@@ -8,7 +8,7 @@ killall picom && picom &
 killall dusnt && dunst &
 killall numlockx && numlockx &
 killall /usr/lib/xfce-polkit/xfce-polkit && /usr/lib/xfce-polkit/xfce-polkit &
-killall $HOME/.config/bspwm/Low-battery-notify && $HOME/.config/bspwm/Low-battery-notify &
+killall $HOME/.config/dunst/Low-battery-notify && $HOME/.config/dunst/Low-battery-notify &
 nitrogen --set-scaled $HOME/Pictures/darkDear.jpg
 alacritty --hold -e sudo openvpn --auth-nocache --config $HOME/ProtonVPN\ Config/us-free-123059.protonvpn.tcp.ovpn --auth-user-pass $HOME/ProtonVPN\ Config/userlogin.txt &
 
