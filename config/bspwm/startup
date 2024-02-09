@@ -1,23 +1,23 @@
-#! /bin/sh
+#!/bin/sh
 
 ############
 ## System ##
 ############
-picom &
-dunst &
-numlockx &
-/usr/lib/xfce-polkit/xfce-polkit &
-pgrep -x sxhkd > /dev/null || sxhkd &
+killall sxhkd && sxhkd &
+killall picom && picom &
+killall dusnt && dunst &
+killall numlockx && numlockx &
+killall /usr/lib/xfce-polkit/xfce-polkit && /usr/lib/xfce-polkit/xfce-polkit &
+killall $HOME/.config/bspwm/Low-battery-notify && $HOME/.config/bspwm/Low-battery-notify &
 nitrogen --set-scaled $HOME/Pictures/darkDear.jpg
-alacritty --hold -e sudo openvpn --config $HOME/ProtonVPN\ Config/us-free-123059.protonvpn.tcp.ovpn --auth-user-pass $HOME/ProtonVPN\ Config/userlogin.txt &
+alacritty --hold -e sudo openvpn --auth-nocache --config $HOME/ProtonVPN\ Config/us-free-123059.protonvpn.tcp.ovpn --auth-user-pass $HOME/ProtonVPN\ Config/userlogin.txt &
 
 #########
 ## Bar ##
 #########
-polybar &
+killall polybar && polybar &
 #anytype &
-protonvpn-app &
-#blueman-applet &
+#killall blueman-applet && blueman-applet &
 greenclip daemon &
-optimus-manager-qt &
+killall optimus-manager-qt && optimus-manager-qt &
 discord --start-minimized &
