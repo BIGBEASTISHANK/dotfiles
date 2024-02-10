@@ -3,21 +3,44 @@
 ############
 ## System ##
 ############
-killall sxhkd && sxhkd &
-killall picom && picom &
-killall dusnt && dunst &
-killall numlockx && numlockx &
-killall /usr/lib/xfce-polkit/xfce-polkit && /usr/lib/xfce-polkit/xfce-polkit &
-killall $HOME/.config/dunst/Low-battery-notify && $HOME/.config/dunst/Low-battery-notify &
-nitrogen --set-scaled $HOME/Pictures/darkDear.jpg
-alacritty --hold -e sudo openvpn --auth-nocache --config $HOME/ProtonVPN\ Config/us-free-123059.protonvpn.tcp.ovpn --auth-user-pass $HOME/ProtonVPN\ Config/userlogin.txt &
+pkill sxhkd
+sxhkd &
+
+pkill picom
+picom &
+
+pkill dunst
+dunst &
+
+numlockx &
+
+pkill -f /usr/lib/xfce-polkit/xfce-polkit
+/usr/lib/xfce-polkit/xfce-polkit &
+
+pkill $HOME/.config/dunst/Low-battery-notify
+$HOME/.config/dunst/Low-battery-notify &
+
+nitrogen --set-scaled $HOME/Pictures/darkDear.jpg &
+
+pkill openvpn
+alacritty --hold -e sudo openvpn --auth-nocache --config $HOME/ProtonVPN\ Config/openvpnConfig.ovpn --auth-user-pass $HOME/ProtonVPN\ Config/userlogin.txt &
 
 #########
 ## Bar ##
 #########
-killall polybar && polybar &
+pkill polybar
+polybar &
+
 #anytype &
-#killall blueman-applet && blueman-applet &
+
+#pkill blueman-applet
+#blueman-applet &
+
+pkill greenclip
 greenclip daemon &
-killall optimus-manager-qt && optimus-manager-qt &
+
+pkill -f optimus-manager-qt
+optimus-manager-qt &
+
+pkill Discord
 discord --start-minimized &

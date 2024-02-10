@@ -43,17 +43,20 @@ super + shift + period
 ####################
 ## Audio Controll ##
 ####################
+#########
+## NOTE: Set -c by doing `aplay -l`
+#########
 # Volume up
 XF86AudioLowerVolume
-	amixer -c 1 set Speaker 1-
+	amixer -c 0 set Speaker 1-
 	
 # Volume down
 XF86AudioRaiseVolume
-	amixer -c 1 set Speaker 1+
+	amixer -c 0 set Speaker 1+
 
 # Volume mute
 XF86AudioMute
-	amixer -c 1 set Speaker toggle
+	amixer -c 0 set Speaker toggle
 
 ##########################
 ## Restart/Close/Reload ##
