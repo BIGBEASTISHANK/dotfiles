@@ -23,7 +23,7 @@ $HOME/.config/dunst/Low-battery-notify &
 nitrogen --set-scaled $HOME/Pictures/darkDear.jpg &
 
 pkill openvpn
-alacritty --hold -e sudo openvpn --auth-nocache --config $HOME/ProtonVPN\ Config/openvpnConfig.ovpn --auth-user-pass $HOME/ProtonVPN\ Config/userlogin.txt &
+alacritty -e sudo openvpn --auth-nocache --config $HOME/ProtonVPN\ Config/openvpnConfig.ovpn --auth-user-pass $HOME/ProtonVPN\ Config/userlogin.txt &
 
 #########
 ## Bar ##
