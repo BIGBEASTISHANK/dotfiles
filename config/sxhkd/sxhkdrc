@@ -48,15 +48,15 @@ super + shift + period
 #########
 # Volume up
 XF86AudioLowerVolume
-	amixer -c 0 set Speaker 1-
+	amixer -c 1 set Speaker 1-
 	
 # Volume down
 XF86AudioRaiseVolume
-	amixer -c 0 set Speaker 1+
+	amixer -c 1 set Speaker 1+
 
 # Volume mute
 XF86AudioMute
-	amixer -c 0 set Speaker toggle
+	amixer -c 1 set Speaker toggle
 
 ##########################
 ## Restart/Close/Reload ##
