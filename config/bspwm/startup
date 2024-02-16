@@ -14,6 +14,8 @@ dunst &
 
 numlockx &
 
+xsetroot -cursor_name left_ptr &
+
 pkill -f /usr/lib/xfce-polkit/xfce-polkit
 /usr/lib/xfce-polkit/xfce-polkit &
 
