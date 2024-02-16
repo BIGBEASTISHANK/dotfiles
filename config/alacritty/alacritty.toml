@@ -10,7 +10,7 @@
 [window]
 padding = { x = 3, y = 3 }
 dynamic_padding = true
-opacity = 0.55
+opacity = 0.3
 
 [font]
 size = 8.0
