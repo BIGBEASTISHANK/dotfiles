@@ -7,7 +7,7 @@ mkdir Build ; cd ./Build
 # Paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
-makepkg -si
+makepkg -si --noconfirm
 cd ../
 
 ## Others
