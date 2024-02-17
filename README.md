@@ -3,7 +3,7 @@
 - Dracula theme btw
 
 ## Preview
-![Homeshowcase.png](/Preview/Home\ show\ case.png)
+![Homeshowcase.png](/Preview/Home%20show%20case.png)
 ![Working.png](/Preview/Working.png)
 
 ## Fonts
