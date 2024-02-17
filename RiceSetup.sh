@@ -22,6 +22,7 @@ sudo sh -c "echo QT_QPA_PLATFORMTHEME=qt5ct >> /etc/environment"
 
 ## Setting Neovim
 git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+sudo git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
 ## Moving config files
 cd ../config/
