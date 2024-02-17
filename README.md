@@ -3,7 +3,8 @@
 - Dracula theme btw
 
 ## Preview
-![preview.png](/preview.png)
+![Homeshowcase.png](/Preview/Home\ show\ case.png)
+![Working.png](/Preview/Working.png)
 
 ## Fonts
 - Arch
@@ -12,6 +13,7 @@
 
 > [!Note]
 > Don't use `RiceSetup.sh` if you are new to Arch Linux as it is using neovim keys and you might get stuck in vim world
+> You this Rice setup script is only for `nvidia gpu` and `linux` kernal. If you use anything else please change script according to your gpu.
 
 ## To use RiceSetup.sh
 - After cloning do
