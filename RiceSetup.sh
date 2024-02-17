@@ -26,6 +26,7 @@ echo "#####"
 echo "#####"
 sleep 2
 read -p "Press any key to continue..."
+sudo nvim /etc/optimus-manager/optimus-manager.conf
 
 ## Setting enviorment variable
 sudo sh -c "echo QT_QPA_PLATFORMTHEME=qt5ct >> /etc/environment"
