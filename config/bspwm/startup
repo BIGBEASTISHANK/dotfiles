@@ -32,6 +32,9 @@ polybar &
 
 #anytype &
 
+pkill nm-applet
+nm-applet &
+
 #pkill blueman-applet
 #blueman-applet &
 
