@@ -12,6 +12,8 @@
     - `sudo pacman -S noto-fonts noto-fonts-emoji`
 
 > [!Note]
+> ## Only for Arch Linux!
+>
 > 1. Don't use `RiceSetup.sh` if you are new to Arch Linux as it is using neovim keys and you might get stuck in vim world
 >
 > 2. Use this Rice setup script is only for `nvidia gpu` and `linux` kernal. If you use anything else please change script according to your gpu.

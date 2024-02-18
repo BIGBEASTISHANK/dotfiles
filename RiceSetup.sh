@@ -23,12 +23,12 @@ rm -rf ./Build/
 
 ## Others
 paru -S alacritty bspwm sddm dunst fish picom polybar rofi sxhkd p7zip --noconfirm
-paru -S brave-bin network-manager-applet gpick flameshot pcmanfm discord proton-vpn-gtk-app --noconfirm
+paru -S brave-bin gpick flameshot pcmanfm discord protonvpn-gui --noconfirm
 paru -S xorg-xsetroot xorg-xrandr xfce4-polkit neofetch nitrogen greenclip neovim --noconfirm
 paru -S ttf-font-awesome noto-fonts noto-fonts-emoji --noconfirm
 paru -S lxappearance qt5ct kvantum sddm-sugar-candy-git --noconfirm
 paru -S nvidia nvidia-utils nvidia-settings optimus-manager optimus-manager-qt --noconfirm 
-paru -S pulseaudio alsa-utils pavucontrol --noconfirm
+paru -S pulseaudio alsa-utils pavucontrol network-manager-applet --noconfirm
 
 ## Setting environment variable
 echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
