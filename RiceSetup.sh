@@ -28,6 +28,7 @@ paru -S xorg-xsetroot xorg-xrandr xfce4-polkit neofetch nitrogen greenclip neovi
 paru -S ttf-font-awesome noto-fonts noto-fonts-emoji --noconfirm
 paru -S lxappearance qt5ct kvantum sddm-sugar-candy-git --noconfirm
 paru -S nvidia nvidia-utils nvidia-settings optimus-manager optimus-manager-qt --noconfirm 
+paru -S pulseaudio alsa-utils pavucontrol --noconfirm
 
 ## Setting environment variable
 echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
