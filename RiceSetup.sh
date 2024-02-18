@@ -11,7 +11,7 @@ makepkg -si --noconfirm
 cd ../
 
 ## Others
-paru -S alacritty bspwm sddm dunst fish picom polybar rofi sxhkd --noconfirm
+paru -S alacritty bspwm sddm dunst fish picom polybar rofi sxhkd ark --noconfirm
 paru -S brave-bin gpick flameshot pcmanfm discord --noconfirm
 paru -S xorg-xsetroot xfce4-polkit neofetch nitrogen greenclip neovim --noconfirm
 paru -S ttf-font-awesome noto-fonts noto-fonts-emoji --noconfirm
@@ -21,12 +21,11 @@ paru -S nvidia nvidia-utils nvidia-settings optimus-manager optimus-manager-qt -
 ## Setting default gpu
 echo "#####"
 echo "#####"
-echo "Opening optimus-manager.conf, find (startup_mode) and set it's value to (nvidia)"
+echo "After reboot open (/etc/optimus-manager/optimus-manager.conf), find (startup_mode) and set it's value to (nvidia)"
 echo "#####"
 echo "#####"
 sleep 2
 read -p "Press any key to continue..."
-sudo nvim /etc/optimus-manager/optimus-manager.conf
 
 ## Setting enviorment variable
 sudo sh -c "echo QT_QPA_PLATFORMTHEME=qt5ct >> /etc/environment"
