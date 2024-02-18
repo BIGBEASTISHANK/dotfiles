@@ -30,19 +30,21 @@ nitrogen --set-scaled $HOME/Pictures/darkDear.jpg &
 pkill polybar
 polybar &
 
-#anytype &
-
 pkill nm-applet
 nm-applet &
-
-#pkill blueman-applet
-#blueman-applet &
 
 pkill greenclip
 greenclip daemon &
 
 pkill -f optimus-manager-qt
 optimus-manager-qt &
+
+#################
+## Application ##
+#################
+
+pkill protonvpn-app
+protonvpn-app &
 
 pkill Discord
 discord --start-minimized &
