@@ -1,42 +1,46 @@
-#!/bin/sh
+#!/bin/bash
+
+set -e  # Exit immediately if a command exits with a non-zero status
+set -u  # Treat unset variables as an error when substituting
+
+echo "Updating files..."
+echo ""
+sleep 2
+git pull
 
 ## Making build directory
-mkdir Build ; cd ./Build
+mkdir -p Build
+cd ./Build
 
 ## Installing packages
 # Paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
-cd ../
+cd ..
+
+rm -rf ./Build/
 
 ## Others
-paru -S alacritty bspwm sddm dunst fish picom polybar rofi sxhkd ark --noconfirm
+paru -S alacritty bspwm sddm dunst fish picom polybar rofi sxhkd p7zip --noconfirm
 paru -S brave-bin gpick flameshot pcmanfm discord --noconfirm
-paru -S xorg-xsetroot xfce4-polkit neofetch nitrogen greenclip neovim --noconfirm
+paru -S xorg-xsetroot xorg-xrandr xfce4-polkit neofetch nitrogen greenclip neovim --noconfirm
 paru -S ttf-font-awesome noto-fonts noto-fonts-emoji --noconfirm
 paru -S lxappearance qt5ct kvantum sddm-sugar-candy-git --noconfirm
 paru -S nvidia nvidia-utils nvidia-settings optimus-manager optimus-manager-qt --noconfirm 
 
-## Setting default gpu
-echo "#####"
-echo "#####"
-echo "After reboot open (/etc/optimus-manager/optimus-manager.conf), find (startup_mode) and set it's value to (nvidia)"
-echo "#####"
-echo "#####"
-sleep 2
-read -p "Press any key to continue..."
+## Setting environment variable
+echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
 
-## Setting enviorment variable
-sudo sh -c "echo QT_QPA_PLATFORMTHEME=qt5ct >> /etc/environment"
-
-## Setting Neovim
+## Setting Neovim for regular user
 git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
-sudo git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+
+## Setting Neovim for root user
+sudo git clone https://github.com/nvim-lua/kickstart.nvim.git "/root/.config/nvim"
 
 ## Moving config files
 cd ../config/
-# Giving right permisison
+# Giving right permission
 chmod +x ./alacritty/* ./bspwm/* ./dunst/* ./fish/* ./picom/* ./polybar/* ./rofi/* ./sxhkd/*
 
 # Moving configs
@@ -45,26 +49,21 @@ cp -r ./* $HOME/.config/
 cd ../
 cp -r ./Wallpaper/ $HOME/Pictures
 
-
 ## Moving Themes
-paru -S
 cd ./Themes/
 sudo cp -r ./Grub\ Theme/* /boot/grub/themes/
 
 echo "#####"
-echo "#####"
-echo "Opening grub config file to set theme. Please locate 'GRUB_THEME' and set it's value to (GRUB_THEME='/boot/grub/themes/darkmatter/theme.txt')"
-echo "#####"
+echo "Opening grub config file to set theme. Please locate 'GRUB_THEME' and set its value to (GRUB_THEME='/boot/grub/themes/darkmatter/theme.txt')"
 echo "#####"
 
 sleep 2
-read -p "Press any key to continue..."
+read -n 1 -s -r -p "Press any key to continue..."
 
 sudo nvim /etc/default/grub
 
 # Making grub config again
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-
 
 ## SDDM theme
 sudo cp -r ./SDDM\ Theme/sugar-candy-custom/ /usr/share/sddm/themes/
@@ -72,52 +71,45 @@ sudo cp ./SDDM\ Theme/sddm.conf /etc/
 
 ## System theme
 # Icon themes
-sudo ark -b ./Icons/candy-icons.tar.xz -o /usr/share/icons/
-
-# Kvantum
-mkdir $HOME/.config/Kvantum/
-cp -r ./System\ Theme/Dracula\ Kvantum/ $HOME/.config/Kvantum/Dracula/
-kvantummanager --set Dracula
-
-# Qt5ct
-echo "#####"
-echo "#####"
-echo "After reboot and login to you bspwm enviorment press (Super + Shift + Return) then type qt5ct and press enter. A application will open and then click on style and change it to kvantum-dark"
-echo "#####"
-echo "#####"
-
-read -p "Press any key to continue..."
+sudo 7z x ./Icons/candy-icons.tar -o/usr/share/icons/
+sudo chown -R $(whoami):$(whoami) /usr/share/icons/candy-icons
 
 # System theme (lxappearance)
 # Cursor theme
 sudo cp -r ./Cursor/* /usr/share/icons/
+sudo chown -R $(whoami):$(whoami) /usr/share/icons/Bibata-Rainbow-Modern
 sudo cp -r ./System\ Theme/Dracula /usr/share/themes/
+sudo chown -R $(whoami):$(whoami) /usr/share/themes/Dracula
 
-echo "#####"
 echo "#####"
 echo "Opening a theme file please put (Bibata-Rainbow-Modern) value in (Inherits)"
 echo "#####"
-echo "#####"
-read -p "Press any key to continue..."
+read -n 1 -s -r -p "Press any key to continue..."
 
 sudo nvim /usr/share/icons/default/index.theme
 
-
 sudo systemctl enable sddm
-
 
 ## Finishing
 echo "#####"
+echo "Important Note: After reboot, you will be greeted with the SDDM manager. For the first time, your system might not work properly, but don't worry."
+echo "---"
+echo "1. Click (Super + Return), then type (killall picom)"
+echo "---"
+echo "Note: If you can remember all this, just remember the first 1st and then type (cat path/to/RichSetup.sh) and read the steps."
+echo "---"
+echo "2. Now type (kvantummanager --set Dracula)"
+echo "3. Type (qt5ct) and change the style to kvantum-dark"
+echo "4. If your polybar doesn't show up, type (xrandr --listmonitors) and copy your monitor name"
+echo "5. Run (nvim $HOME/.config/polybar/config.ini)"
+echo "6. Scroll to (monitor) and change the name to your listed monitor"
+echo "7. Type (optimus-manager --switch nvidia)"
+echo "8. Log back in, and everything will work fine"
 echo "#####"
-echo "After reboot and after setting qt5ct theme open lxappearance and select theme as dracula, cursor to bibata rainbow, icon themes to candy icon."
-echo "#####"
-echo "#####"
+
 sleep 2
-read -p "Press any key to continue..."
-echo "#####"
-echo "#####"
+read -n 1 -s -r -p "Press any key to continue..."
+echo ""
 echo "Rebooting..."
-echo "#####"
-echo "#####"
 sleep 2
-reboot
+sudo reboot
