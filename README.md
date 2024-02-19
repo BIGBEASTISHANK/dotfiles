@@ -1,6 +1,4 @@
 # DOTFILE
-- Just my dot file noting else
-- Dracula theme btw
 
 ## Preview
 ![Homeshowcase.png](/Preview/Home%20show%20case.png)
@@ -8,19 +6,9 @@
 
 ## Fonts
 - Arch
-    - `sudo pacman -S ttf-font-awesome`
-    - `sudo pacman -S noto-fonts noto-fonts-emoji`
+    - `sudo pacman -S ttf-font-awesome noto-fonts noto-fonts-emoji`
 
-> [!Note]
-> ## Only for Arch Linux!
+> [!Important]
+> - I am working on an `Arch Linux Installer Script` and I will install **Arch Linux** completely and will install all the software which I uses in my daily life and with all the theme.
 >
-> 1. Don't use `RiceSetup.sh` if you are new to Arch Linux as it is using neovim keys and you might get stuck in vim world
->
-> 2. Use this Rice setup script is only for `nvidia gpu` and `linux` kernal. If you use anything else please change script according to your gpu.
->
-> 3. Their **might** be some issues with `RiceScript.sh`. It was taking very long to satisty each and every portion accordingly. If you find some issue then you can [open a new issue](https://github.com/BIGBEASTISHANK/dotfile/issues/new)
-
-## To use RiceSetup.sh
-- After cloning do
-- `cd dotfile`
-- `chmod +x ./RiceSetup.sh`
+> - You can check the development of `Arch Linux Installer Script` in [dev](/tree/dev/) branch.
