@@ -14,7 +14,7 @@ while true; do
 
     ## If battery is low
     if [[ $batteryLevel -le $lowBatteryLevel && $playedIfLow == false ]]; then
-        notify-send "Battery low" "Battery level is ${batteryLevel}%!"
+        notify-send --urgency=critical "Battery low" "Battery level is ${batteryLevel}%!"
         playedIfLow=true
 
     elif [[ $batteryLevel -gt $lowBatteryLevel && $playedIfLow == true ]]; then
@@ -23,7 +23,7 @@ while true; do
 
     ## If battery is full
     if [[ $batteryLevel -ge $fullBatteryLevel && $playedIfFull == false ]]; then
-        notify-send "Battery full" "Please disconnect charger"
+        notify-send --urgency=critical "Battery full" "Please disconnect charger"
         playedIfFull=true
 
     elif [[ $batteryLevel -lt $fullBatteryLevel && $playedIfFull == true ]]; then
