@@ -1,0 +1,35 @@
+#!/bin/bash
+
+## Global Variables
+playedIfLow=false
+playedIfFull=false
+lowBatteryLevel=25
+fullBatteryLevel=98
+sleepSecond=10
+
+## Loop
+while true; do
+    ## Battery percentage
+    batteryLevel=$(acpi -b | grep -o '[0-9]\+%' | tr -d '%')
+
+    ## If battery is low
+    if [[ $batteryLevel -le $lowBatteryLevel && $playedIfLow == false ]]; then
+        notify-send "Battery low" "Battery level is ${batteryLevel}%!"
+        playedIfLow=true
+
+    elif [[ $batteryLevel -gt $lowBatteryLevel && $playedIfLow == true ]]; then
+        playedIfLow=false
+    fi
+
+    ## If battery is full
+    if [[ $batteryLevel -ge $fullBatteryLevel && $playedIfFull == false ]]; then
+        notify-send "Battery full" "Please disconnect charger"
+        playedIfFull=true
+
+    elif [[ $batteryLevel -lt $fullBatteryLevel && $playedIfFull == true ]]; then
+        playedIfFull=false
+    fi
+
+    ## Sleep for some seconds
+    sleep $sleepSecond
+done

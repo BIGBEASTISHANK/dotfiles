@@ -436,4 +436,4 @@
 # vim: ft=cfg
 [play_sound]
     summary = "*"
-    script = .config/dunst/notification.sh
+    script = .config/dunst/notification-sound
