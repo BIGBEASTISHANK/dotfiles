@@ -4,7 +4,7 @@
 playedIfLow=false
 playedIfFull=false
 lowBatteryLevel=25
-fullBatteryLevel=98
+fullBatteryLevel=95
 sleepSecond=10
 
 ## Loop
@@ -15,8 +15,9 @@ while true; do
     ## If battery is low
     if [[ $batteryLevel -le $lowBatteryLevel && $playedIfLow == false ]]; then
         notify-send --urgency=critical "Battery low" "Battery level is ${batteryLevel}%!"
+        bbinotisound
         playedIfLow=true
-
+        
     elif [[ $batteryLevel -gt $lowBatteryLevel && $playedIfLow == true ]]; then
         playedIfLow=false
     fi
@@ -24,6 +25,7 @@ while true; do
     ## If battery is full
     if [[ $batteryLevel -ge $fullBatteryLevel && $playedIfFull == false ]]; then
         notify-send --urgency=critical "Battery full" "Please disconnect charger"
+        bbinotisound
         playedIfFull=true
 
     elif [[ $batteryLevel -lt $fullBatteryLevel && $playedIfFull == true ]]; then
