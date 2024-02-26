@@ -43,8 +43,11 @@ optimus-manager-qt &
 ## Application ##
 #################
 
-pkill protonvpn-app
-protonvpn-app &
+#pkill protonvpn-app
+#protonvpn-app &
+
+pkill protonvpn
+protonvpn &
 
 pkill Discord
 discord --start-minimized &
