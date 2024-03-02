@@ -2,7 +2,7 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d       
+bspc monitor -d       
 
 # Set initial border color
 bspc config normal_border_color "#44475a"

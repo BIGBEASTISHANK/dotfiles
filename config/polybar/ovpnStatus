@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Check if OpenVPN is running
+if pgrep -x "openvpn" | grep -q .
+then
+    echo "VPN (On)"
+else
+    echo "VPN (Off)"
+fi
