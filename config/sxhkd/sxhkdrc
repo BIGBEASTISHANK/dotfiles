@@ -140,6 +140,10 @@ super + shift + ctrl + {Left,Down,Up,Right}
 super + shift + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
+# Balance all node
+super + shift + a
+	bspc node @/ -B
+
 # cancel the preselection for the focused node
 super + Escape
 	bspc node -p cancel

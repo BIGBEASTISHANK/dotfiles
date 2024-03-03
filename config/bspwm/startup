@@ -22,7 +22,7 @@ pkill -f /usr/lib/xfce-polkit/xfce-polkit
 pkill -f $HOME/.config/dunst/batteryStatus
 $HOME/.config/dunst/batteryStatus &
 
-nitrogen --set-scaled $HOME/Pictures/darkDear.jpg &
+nitrogen --restore &
 
 #########
 ## Bar ##
@@ -45,9 +45,6 @@ optimus-manager-qt &
 
 pkill protonvpn-app
 protonvpn-app &
-
-#pkill protonvpn
-#protonvpn &
 
 pkill Discord
 discord --start-minimized &
