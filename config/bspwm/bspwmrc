@@ -20,7 +20,7 @@ bspc config gapless_monocle      true
 ## Applications rule
 bspc rule -a "stacer" state=floating
 bspc rule -a "Gnome-calculator" state=floating
-bspc rule -a "Protonvpn-app" state=floating desktop=^7
+bspc rule -a "Protonvpn" state=floating desktop=^7
 bspc rule -a "Com.github.sgpthomas.hourglass" state=floating
 
 ## AutoStart
