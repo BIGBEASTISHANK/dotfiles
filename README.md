@@ -1,8 +1,8 @@
 # DOTFILE
 
 ## Preview
-![Homeshowcase.png](/Preview/Home%20show%20case.png)
-![Working.png](/Preview/Working.png)
+![idle.png](/Preview/idle.png)
+![working.png](/Preview/working.png)
 
 ## Fonts
 - Arch
