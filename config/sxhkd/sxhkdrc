@@ -107,6 +107,9 @@ super + ctrl + r
 super + shift + c
 	bspc node -c
 
+super + shift + x
+	bspc node -k
+
 ###################
 ## Windows State ##
 ###################
