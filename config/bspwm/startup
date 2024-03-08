@@ -24,6 +24,8 @@ $HOME/.config/dunst/batteryStatus &
 
 nitrogen --restore &
 
+xinput set-prop pointer:2.4G\ Mouse 350 0 1 0
+
 #########
 ## Bar ##
 #########
