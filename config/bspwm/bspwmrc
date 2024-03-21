@@ -14,8 +14,6 @@ bspc config border_width         4
 bspc config window_gap          17
 
 bspc config split_ratio          0.5
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
 
 ## Applications rule
 bspc rule -a "stacer" state=floating
