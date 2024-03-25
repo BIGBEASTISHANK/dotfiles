@@ -21,7 +21,7 @@ bspc rule -a "scrcpy" state=floating
 bspc rule -a "Gnome-calculator" state=floating
 bspc rule -a "SimpleScreenRecorder" state=floating
 bspc rule -a "Protonvpn-app" state=floating desktop=^7
-bspc rule -a "Com.github.sgpthomas.hourglass" state=floating
+bspc rule -a "Com.github.sgpthomas.hourglass" state=floating desktop=^8
 
 ## AutoStart
 $HOME/.config/bspwm/startup &
