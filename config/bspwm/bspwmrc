@@ -18,10 +18,11 @@ bspc config split_ratio          0.5
 ## Applications rule
 bspc rule -a "stacer" state=floating
 bspc rule -a "scrcpy" state=floating
+bspc rule -a "UnrealEditor" desktop=^4
 bspc rule -a "Gnome-calculator" state=floating
-bspc rule -a "SimpleScreenRecorder" state=floating
 bspc rule -a "Protonvpn-app" state=floating desktop=^7
-bspc rule -a "Com.github.sgpthomas.hourglass" state=floating desktop=^8
+bspc rule -a "Com.github.sgpthomas.hourglass" state=floating
+bspc rule -a "SimpleScreenRecorder" state=floating desktop=^8
 
 ## AutoStart
 $HOME/.config/bspwm/startup &
