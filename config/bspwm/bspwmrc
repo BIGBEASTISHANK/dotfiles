@@ -20,6 +20,7 @@ bspc rule -a "stacer" state=floating
 bspc rule -a "scrcpy" state=floating
 bspc rule -a "Code" desktop=^3 follow=true
 bspc rule -a "Pcmanfm" desktop=^2 follow=true
+bspc rule -a "discord" desktop=^5 follow=true
 bspc rule -a "VSCodium" desktop=^3 follow=true
 bspc rule -a "Gnome-calculator" state=floating
 bspc rule -a "Alacritty" desktop=^2 follow=true
