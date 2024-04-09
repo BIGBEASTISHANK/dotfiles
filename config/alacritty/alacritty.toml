@@ -1,11 +1,4 @@
-# Dracula theme for Alacritty
-# https://draculatheme.com/alacritty
-#
-# Color palette
-# https://spec.draculatheme.com
-#
-# Instructions
-# https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd
+# Made by bigbeastishank
 
 [window]
 padding = { x = 3, y = 3 }
