@@ -24,7 +24,7 @@ $HOME/.config/dunst/batteryStatus &
 
 nitrogen --restore &
 
-xinput set-prop  pointer:2.4G\ Mouse libinput\ Accel\ Profile\ Enabled 0 1 0 &
+xinput set-prop PixArt\ Lenovo\ USB\ Optical\ Mouse libinput\ Accel\ Profile\ Enabled 0 1 0 &
 
 #########
 ## Bar ##
