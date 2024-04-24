@@ -3,7 +3,7 @@
 ## BSPWM Config
 bspc monitor -d        
 
-# Set initial border color
+## Set initial border color
 bspc config normal_border_color "#515860"
 bspc config active_border_color "#FF69B4"
 bspc config focused_border_color "#1793D1"
@@ -30,13 +30,14 @@ bspc rule -a "Com.github.sgpthomas.hourglass" state=floating
 bspc rule -a "Protonvpn-app" state=floating desktop=^7 follow=false
 bspc rule -a "SimpleScreenRecorder" state=floating desktop=^8 follow=true
 
-###############
-## AutoStart ##
-###############
-#-------------------------------------------------------------------------------------------#
-############
-## System ##
-############
+
+
+
+
+
+##----------------##
+## System Startup ##
+##----------------##
 pkill sxhkd
 sxhkd &
 
@@ -60,9 +61,9 @@ nitrogen --restore &
 
 xinput set-prop  pointer:2.4G\ Mouse libinput\ Accel\ Profile\ Enabled 0 1 0 &
 
-#########
-## Bar ##
-#########
+##------------##
+## Essentials ##
+##------------##
 pkill polybar
 polybar &
 
@@ -75,10 +76,9 @@ greenclip daemon &
 pkill -f optimus-manager-qt
 optimus-manager-qt &
 
-#################
+##-------------##
 ## Application ##
-#################
-
+##-------------##
 pkill protonvpn-app
 protonvpn-app &
 
