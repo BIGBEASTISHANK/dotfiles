@@ -1,7 +1,6 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
-
+## BSPWM Config
 bspc monitor -d        
 
 # Set initial border color
@@ -31,5 +30,57 @@ bspc rule -a "Com.github.sgpthomas.hourglass" state=floating
 bspc rule -a "Protonvpn-app" state=floating desktop=^7 follow=false
 bspc rule -a "SimpleScreenRecorder" state=floating desktop=^8 follow=true
 
-## AutoStart
-$HOME/.config/bspwm/startup &
+###############
+## AutoStart ##
+###############
+#-------------------------------------------------------------------------------------------#
+############
+## System ##
+############
+pkill sxhkd
+sxhkd &
+
+pkill picom
+picom &
+
+pkill dunst
+dunst &
+
+numlockx &
+
+xsetroot -cursor_name left_ptr &
+
+pkill -f /usr/lib/xfce-polkit/xfce-polkit
+/usr/lib/xfce-polkit/xfce-polkit &
+
+pkill -f $HOME/.config/dunst/batteryStatus
+$HOME/.config/dunst/batteryStatus &
+
+nitrogen --restore &
+
+xinput set-prop  pointer:2.4G\ Mouse libinput\ Accel\ Profile\ Enabled 0 1 0 &
+
+#########
+## Bar ##
+#########
+pkill polybar
+polybar &
+
+pkill nm-applet
+nm-applet &
+
+pkill greenclip
+greenclip daemon &
+
+pkill -f optimus-manager-qt
+optimus-manager-qt &
+
+#################
+## Application ##
+#################
+
+pkill protonvpn-app
+protonvpn-app &
+
+pkill Discord
+discord --start-minimized &
