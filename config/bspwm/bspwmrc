@@ -26,7 +26,7 @@ bspc rule -a "discord" desktop=^5 follow=true
 bspc rule -a "VSCodium" desktop=^3 follow=true
 bspc rule -a "Gnome-calculator" state=floating
 bspc rule -a "Alacritty" desktop=^2 follow=true
-bspc rule -a "UnrealEditor" desktop=^4 follow=true
+bspc rule -a "UnrealEditor" desktop=^4 follow=false
 bspc rule -a "Com.github.sgpthomas.hourglass" state=floating
 bspc rule -a "Protonvpn-app" state=floating desktop=^7 follow=false
 bspc rule -a "SimpleScreenRecorder" state=floating desktop=^8 follow=true
