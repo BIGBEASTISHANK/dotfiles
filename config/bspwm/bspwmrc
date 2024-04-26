@@ -41,13 +41,14 @@ bspc rule -a "SimpleScreenRecorder" state=floating desktop=^8 follow=true
 pkill sxhkd
 sxhkd &
 
+pkill protonvpn-app
+protonvpn-app &
+
 pkill picom
 picom &
 
 pkill dunst
 dunst &
-
-numlockx &
 
 xsetroot -cursor_name left_ptr &
 
@@ -79,8 +80,5 @@ optimus-manager-qt &
 ##-------------##
 ## Application ##
 ##-------------##
-pkill protonvpn-app
-protonvpn-app &
-
 pkill Discord
 discord --start-minimized &
