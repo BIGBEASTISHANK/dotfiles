@@ -15,20 +15,20 @@ bspc config window_gap          17
 bspc config split_ratio          0.5
 
 ## Applications rule
-bspc rule -a "steam" desktop=^6
+# bspc rule -a "steam" desktop=^6
 bspc rule -a "stacer" state=floating
 bspc rule -a "scrcpy" state=floating
-bspc rule -a "Brave-browser" desktop=^1
+# bspc rule -a "Brave-browser" desktop=^1
 bspc rule -a "Code" desktop=^3 follow=true
-bspc rule -a "Pcmanfm" desktop=^2 follow=true
-bspc rule -a "discord" desktop=^5 follow=true
-bspc rule -a "VSCodium" desktop=^3 follow=true
+# bspc rule -a "Pcmanfm" desktop=^2 follow=true
+# bspc rule -a "discord" desktop=^5 follow=true
+# bspc rule -a "VSCodium" desktop=^3 follow=true
 bspc rule -a "Gnome-calculator" state=floating
-bspc rule -a "Alacritty" desktop=^2 follow=true
+# bspc rule -a "Alacritty" desktop=^2 follow=true
 bspc rule -a "UnrealEditor" desktop=^4 follow=false
 bspc rule -a "Com.github.sgpthomas.hourglass" state=floating
-bspc rule -a "Protonvpn-app" state=floating desktop=^7 follow=false
-bspc rule -a "SimpleScreenRecorder" state=floating desktop=^8 follow=true
+# bspc rule -a "Protonvpn-app" state=floating desktop=^7 follow=false
+# bspc rule -a "SimpleScreenRecorder" state=floating desktop=^8 follow=true
 
 
 
@@ -61,6 +61,7 @@ $HOME/.config/dunst/batteryStatus &
 nitrogen --restore &
 
 xinput set-prop  pointer:2.4G\ Mouse libinput\ Accel\ Profile\ Enabled 0 1 0 &
+xinput set-prop PixArt\ Lenovo\ USB\ Optical\ Mouse libinput\ Accel\ Profile\ Enabled 0 1 0 &
 
 ##------------##
 ## Essentials ##
