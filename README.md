@@ -6,7 +6,10 @@
 
 ## Install script
 > [!Important]
-> Run this script after installing OS
+> This is fresh script and haven't tested yet. Please be carefull
+
+> [!Important]
+> Run this script after installing OS. ONLY FOR `nvidia` and `linux` kernal. NO`linux-lts`.
 
 ## Arch Linux
 - ```sh

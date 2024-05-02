@@ -213,6 +213,7 @@ function SettingUpThemes() {
     paru -S sddm-sugar-candy-git
     sudo cp -r ./Themes/SDDM\ Theme/sugar-candy-custom/ /usr/share/sddm/themes/
     sudo cp ./Themes/SDDM\ Theme/sddm.conf /etc/
+    sudo systemctl enable sddm
 
     # System Themes
     echo "---"
@@ -246,7 +247,15 @@ InstallingImportantPackages
 ## Installing Extra Application ##
 ##------------------------------##
 InstallingExtrasPackages() {
-    
+    paru -S discord
+
+    echo ""
+    echo "Installing vencord, Please follow the instruction.."
+    echo "---"
+    sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
+
+    paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity blender obs-studio prismlauncher-bin simplescreenrecorder vlc gnome-text-editor
+    paru -S proton-vpn-gtk-app arqiver vscodium-bin visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils optimus-manager-qt gparted scrcpy veracrypt
 }
 
 # Prompt the user for confirmation
@@ -279,3 +288,20 @@ function Finishing() {
     sudo sh -c 'cat ./Themes/System\ Theme/enviroment >> /etc/environment'
 }
 Finishing
+
+##------##
+## Note ##
+##------##
+function Note(){
+    echo ""
+    echo ""
+    echo "---"
+    echo Note:
+    echo "Themes: When you restart your system, run lxappearance, kvantum-manager and set theme to dracula, icons to candy-icons, cursor to bibata-rainbot-modern"
+    echo ""
+    echo "Grub: After setting themes, run grub-customizer and set theme to dark matter"
+    echo ""
+    echo "Reboot for changes to take place"
+    echo "---"
+}
+Note
