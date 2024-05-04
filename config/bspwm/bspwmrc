@@ -84,6 +84,3 @@ optimus-manager-qt &
 ##-------------##
 pkill Discord
 discord --start-minimized &
-
-pkill signal-desktop &
-signal-desktop --start-in-tray &
