@@ -13,11 +13,11 @@
 
 ## Arch Linux
 > [!Note]
-> Its important to run `echo 6b0cbc37fcc8e2f4141c948602fd34891e1a2c8d rice-setup.sh | sha1sum -c` to check the legitimacy of the script.
+> Its important to run `echo 411e2a87a06fffb09385d77e561e8ee736b666b0b0259e7faf116764d2ec630b rice-setup.sh | sha256sum -c` to check the legitimacy of the script.
 ```sh
 git clone https://github.com/BIGBEASTISHANK/dotfiles
 cd dotfiles
-echo 6b0cbc37fcc8e2f4141c948602fd34891e1a2c8d rice-setup.sh | sha1sum -c
+echo 411e2a87a06fffb09385d77e561e8ee736b666b0b0259e7faf116764d2ec630b rice-setup.sh | sha256sum -c
 chmod +x ./rice-setup.sh
 ./rice-setup.sh
 ```
