@@ -239,7 +239,7 @@ echo "Installing Important packages..."
 InstallingImportantPackages() {
     paru -S pulseaudio alsa-utils pipewire-alsa
     paru -S pcmanfm brave-bin gnome-calculator nitrogen pavucontrol
-    paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick xfce-polkit
+    paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick xfce-polkit gnome-keyring
 }
 InstallingImportantPackages
 
