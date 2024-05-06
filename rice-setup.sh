@@ -254,7 +254,7 @@ InstallingExtrasPackages() {
     echo "---"
     sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 
-    paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity blender obs-studio prismlauncher-bin simplescreenrecorder vlc gnome-text-editor
+    paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity blender obs-studio prismlauncher-bin simplescreenrecorder vlc gnome-text-editor eog
     paru -S proton-vpn-gtk-app arqiver vscodium-bin visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils optimus-manager-qt gparted scrcpy veracrypt
 }
 
