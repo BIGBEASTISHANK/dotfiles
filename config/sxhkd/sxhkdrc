@@ -73,7 +73,7 @@ super + shift + c
 
 # Kill window
 super + shift + x
-	bspc node -k
+	xkill
 
 # Set Windows state
 super + shift + {t,s,f}
