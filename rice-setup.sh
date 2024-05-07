@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 0.1.0 (Beta)"
+echo "Version 1.5.3"
 echo "---"
 sleep 5
 
@@ -220,7 +220,7 @@ function SettingUpThemes() {
     echo "Setting system themes"
     sleep 0.5
 
-    paru -S kvantum lxappearance qt5ct qt6ct
+    paru -S kvantum kvantum-qt5 lxappearance qt5ct qt6ct
 
     sudo cp -r ./Themes/System\ Theme/GTK/* /usr/share/themes/
     paru -S dracula-gtk-theme
@@ -239,7 +239,8 @@ echo "Installing Important packages..."
 InstallingImportantPackages() {
     paru -S pulseaudio alsa-utils pipewire-alsa
     paru -S pcmanfm brave-bin gnome-calculator nitrogen pavucontrol
-    paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick xfce-polkit gnome-keyring xkill
+    paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick xfce-polkit gnome-keyring
+    paru -S rofi-greenclip xorg-xinput xorg-xkill bat
 }
 InstallingImportantPackages
 
@@ -255,7 +256,7 @@ InstallingExtrasPackages() {
     sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 
     paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity blender obs-studio prismlauncher-bin simplescreenrecorder vlc gnome-text-editor eog
-    paru -S proton-vpn-gtk-app arqiver vscodium-bin visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils optimus-manager-qt gparted scrcpy veracrypt
+    paru -S proton-vpn-gtk-app arqiver vscodium-bin visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils optimus-manager-qt-git gparted scrcpy veracrypt
 }
 
 # Prompt the user for confirmation
