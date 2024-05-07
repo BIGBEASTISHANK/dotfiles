@@ -73,7 +73,7 @@ super + shift + c
 
 # Kill window
 super + shift + x
-	xkill
+	bspc node -k
 
 # Set Windows state
 super + shift + {t,s,f}
@@ -123,6 +123,10 @@ super + shift + ctrl + {Left,Down,Up,Right}
 # Preselect the ratio
 super + shift + ctrl + {1-9}
 	bspc node -o 0.{1-9}
+
+# Kill selector
+super + shift + ctrl + x
+	xkill
 
 ########################
 ## Super + Ctrl + Alt ##
