@@ -5,7 +5,7 @@
 ![working.png](/Preview/working.png)
 
 ## Install script
-> [!Important]
+> [!Note]
 > This script has been tested and confirmed that it works on.
 > ```bash
 >                   -`                     ishank@ArchBeast
