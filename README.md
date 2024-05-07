@@ -7,8 +7,13 @@
 ## Install script
 > [!Important]
 > Run this script after installing OS. ONLY FOR `nvidia` and `linux` kernal. NO `linux-lts`.
+- Version name convention: `[major].[bugfix].[package]` 
 
 ## Arch Linux
+- **Version:** `1.5.4`
+> [!Note]
+> Its important to run `echo 461375ae39df98f6be048fac7c4aedf01a4f5b9ae7409450158038df7195fab6 rice-setup.sh | sha256sum -c` to check the legitimacy of the script.
+
 > [!Note]
 > This script has been tested and confirmed that it works on.
 > ```bash
@@ -33,12 +38,10 @@
 > .`                                 `/
 > ```
 
-> [!Note]
-> Its important to run `echo 8d002205b1e68cf340293ade48b5a25c4658451e966fabf3a3d46f9b51fe9b66 rice-setup.sh | sha256sum -c` to check the legitimacy of the script.
 ```sh
 git clone https://github.com/BIGBEASTISHANK/dotfiles
 cd dotfiles
-echo 8d002205b1e68cf340293ade48b5a25c4658451e966fabf3a3d46f9b51fe9b66 rice-setup.sh | sha256sum -c
+echo 461375ae39df98f6be048fac7c4aedf01a4f5b9ae7409450158038df7195fab6 rice-setup.sh | sha256sum -c
 chmod +x ./rice-setup.sh
 ./rice-setup.sh
 ```
