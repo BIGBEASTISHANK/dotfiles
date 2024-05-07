@@ -12,7 +12,7 @@
 ## Arch Linux
 - **Version:** `1.5.4`
 > [!Note]
-> Its important to run `echo 461375ae39df98f6be048fac7c4aedf01a4f5b9ae7409450158038df7195fab6 rice-setup.sh | sha256sum -c` to check the legitimacy of the script.
+> Its important to run `echo 5468138d922a26537b5fd6fd3952a4a7242392fc0936bb67f77a3948c3f05a40 rice-setup.sh | sha256sum -c` to check the legitimacy of the script.
 
 > [!Note]
 > This script has been tested and confirmed that it works on.
@@ -41,7 +41,7 @@
 ```sh
 git clone https://github.com/BIGBEASTISHANK/dotfiles
 cd dotfiles
-echo 461375ae39df98f6be048fac7c4aedf01a4f5b9ae7409450158038df7195fab6 rice-setup.sh | sha256sum -c
+echo 5468138d922a26537b5fd6fd3952a4a7242392fc0936bb67f77a3948c3f05a40 rice-setup.sh | sha256sum -c
 chmod +x ./rice-setup.sh
 ./rice-setup.sh
 ```
