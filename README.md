@@ -5,6 +5,10 @@
 ![working.png](/Preview/working.png)
 
 ## Install script
+> [!Important]
+> Run this script after installing OS. ONLY FOR `nvidia` and `linux` kernal. NO `linux-lts`.
+
+## Arch Linux
 > [!Note]
 > This script has been tested and confirmed that it works on.
 > ```bash
@@ -29,10 +33,6 @@
 > .`                                 `/
 > ```
 
-> [!Important]
-> Run this script after installing OS. ONLY FOR `nvidia` and `linux` kernal. NO `linux-lts`.
-
-## Arch Linux
 > [!Note]
 > Its important to run `echo 8d002205b1e68cf340293ade48b5a25c4658451e966fabf3a3d46f9b51fe9b66 rice-setup.sh | sha256sum -c` to check the legitimacy of the script.
 ```sh
