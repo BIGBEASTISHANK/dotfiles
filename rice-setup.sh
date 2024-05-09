@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 1.5.6"
+echo "Version 1.5.7"
 echo "---"
 sleep 5
 
@@ -238,7 +238,7 @@ echo "Installing Important packages..."
 
 InstallingImportantPackages() {
     paru -S pulseaudio alsa-utils pipewire-alsa
-    paru -S pcmanfm gvfs brave-bin gnome-calculator nitrogen pavucontrol
+    paru -S pcmanfm gvfs brave-bin gnome-calculator-gtk3 nitrogen pavucontrol
     paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick xfce-polkit gnome-keyring
     paru -S rofi-greenclip xorg-xinput xorg-xkill bat xclip rofi-emoji
 }
