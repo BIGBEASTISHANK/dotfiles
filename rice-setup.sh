@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 1.5.7"
+echo "Version 1.2.6.7"
 echo "---"
 sleep 5
 
@@ -239,7 +239,8 @@ echo "Installing Important packages..."
 InstallingImportantPackages() {
     paru -S pulseaudio alsa-utils pipewire-alsa
     paru -S pcmanfm gvfs brave-bin gnome-calculator-gtk3 nitrogen pavucontrol
-    paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick xfce-polkit gnome-keyring
+    paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick
+    paru -S xfce-polkit gnome-keyring
     paru -S rofi-greenclip xorg-xinput xorg-xkill bat xclip rofi-emoji
 }
 InstallingImportantPackages
@@ -255,8 +256,11 @@ InstallingExtrasPackages() {
     echo "---"
     sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 
-    paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity blender obs-studio prismlauncher-bin simplescreenrecorder vlc gnome-text-editor eog
-    paru -S proton-vpn-gtk-app arqiver vscodium-bin visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils optimus-manager-qt-git gparted scrcpy veracrypt
+    paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity
+    paru -S blender obs-studio prismlauncher-bin simplescreenrecorder vlc
+    paru -S gnome-text-editor eog proton-vpn-gtk-app arqiver vscodium-bin
+    paru -S visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils
+    paru -S optimus-manager-qt-git gparted scrcpy veracrypt
 }
 
 # Prompt the user for confirmation
