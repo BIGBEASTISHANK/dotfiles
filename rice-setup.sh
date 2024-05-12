@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 1.2.6.7"
+echo "Version 1.2.6.8"
 echo "---"
 sleep 5
 
@@ -258,7 +258,7 @@ InstallingExtrasPackages() {
 
     paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity
     paru -S blender obs-studio prismlauncher-bin simplescreenrecorder vlc
-    paru -S gnome-text-editor eog proton-vpn-gtk-app arqiver vscodium-bin
+    paru -S gnome-text-editor eog proton-vpn-gtk-app file-roller vscodium-bin
     paru -S visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils
     paru -S optimus-manager-qt-git gparted scrcpy veracrypt
 }
