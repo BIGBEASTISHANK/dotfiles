@@ -12,7 +12,7 @@
 ## Arch Linux
 - **Version:** `1.2.6.9`
 > [!Note]
-> Its important to run `echo d1243f6c91b2f8c18a5a989c3b845af89bb1943d9bd4c88549e6b473416dcdc6 rice-setup.sh | sha256sum -c` to check the legitimacy & inigrity of the script.
+> Its important to run `echo d1243f6c91b2f8c18a5a989c3b845af89bb1943d9bd4c88549e6b473416dcdc6 rice-setup.sh | sha256sum -c` to check the legitimacy & integrity of the script.
 
 > [!Note]
 > This script has been tested and confirmed that it works on.
