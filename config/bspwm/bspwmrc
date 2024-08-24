@@ -31,6 +31,7 @@ bspc rule -a "Com.github.sgpthomas.hourglass" state=floating
 bspc rule -a "Protonvpn-app" state=floating
 # bspc rule -a "SimpleScreenRecorder" state=floating desktop=^8 follow=true
 bspc rule -a "SimpleScreenRecorder" state=floating
+bspc rule -a "Signal" state=floating
 
 
 
