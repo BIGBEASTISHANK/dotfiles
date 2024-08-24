@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 2.7.0"
+echo "Version 2.7.1"
 echo "---"
 sleep 5
 
@@ -257,7 +257,7 @@ InstallingExtrasPackages() {
     echo "---"
     sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 
-    paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity
+    paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity signal-desktop
     paru -S blender obs-studio prismlauncher-bin simplescreenrecorder vlc
     paru -S gnome-text-editor eog proton-vpn-gtk-app file-roller vscodium-bin
     paru -S visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils
