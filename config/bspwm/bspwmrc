@@ -88,3 +88,6 @@ discord --start-minimized &
 
 pkill signal-desktop
 signal-desktop &
+
+pkill anytype
+anytype &
