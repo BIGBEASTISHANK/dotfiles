@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 2.7.1"
+echo "Version 2.8.5"
 echo "---"
 sleep 5
 
@@ -165,6 +165,7 @@ function SettingUpConfigs() {
     echo ""
     mkdir ~/.config/Vencord/
     cp -r ./config/Vencord/* ~/.config/Vencord/
+    echo "Vencord themes setup done..."
 }
 SettingUpConfigs
 
@@ -194,6 +195,7 @@ function SettingUpThemes() {
     echo "---"
     echo "Coping Cursors.."
     sudo cp -r ./Themes/Cursor/* /usr/share/icons/
+    echo "gtk-cursor-theme-name=Bibata-Rainbow-Modern" >> /home/$USER/.config/gtk-3.0/settings.ini
     sleep 0.3
 
     # Grub thems
@@ -238,7 +240,7 @@ echo "Installing Important packages..."
 
 InstallingImportantPackages() {
     paru -S gvfs gvfs-mtp gvfs-smb
-    paru -S pulseaudio alsa-utils pipewire-alsa
+    paru -S alsa-utils pipewire pipewire-alsa pipewire-jack pipewire-pulse
     paru -S pcmanfm brave-bin gnome-calculator-gtk3 nitrogen pavucontrol
     paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick
     paru -S xfce-polkit gnome-keyring selectdefaultapplication-git

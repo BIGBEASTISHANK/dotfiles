@@ -10,11 +10,11 @@
 - Version name convention: `[major].[bug].[package]` 
 
 ## Arch Linux
-- **Version:** `2.7.1`
+- **Version:** `2.8.5`
 ```sh
 git clone https://github.com/BIGBEASTISHANK/dotfiles
 cd dotfiles
-echo 71f5e1ef99392039379b24171f970f403f5aa361ac391a8a969c3e0c26db3080 rice-setup.sh | sha256sum -c
+echo 19df0aebf689080180e0c99c523bab014805c79205a54d8dfb437b0284d81aca rice-setup.sh | sha256sum -c
 chmod +x ./rice-setup.sh
 ./rice-setup.sh
 ```
