@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 2.8.5"
+echo "Version 3.0.0"
 echo "---"
 sleep 5
 
@@ -31,6 +31,17 @@ fi
 echo "Updating the system..."
 sleep 0.5
 paru
+
+##---------------------------##
+## Installing BlackArch Repo ##
+##---------------------------##
+function InstallBlackArchRepo(){
+	curl -O https://blackarch.org/strap.sh
+	chmod +x strap.sh
+	sudo ./strap.sh
+	paru
+}
+InstallBlackArchRepo
 
 ##------------------##
 ## Adding bin files ##
@@ -238,8 +249,8 @@ SettingUpThemes
 echo "---"
 echo "Installing Important packages..."
 
-InstallingImportantPackages() {
-    paru -S gvfs gvfs-mtp gvfs-smb
+function InstallingImportantPackages() {
+    paru -S gvfs gvfs-mtp gvfs-smb less base-devel
     paru -S alsa-utils pipewire pipewire-alsa pipewire-jack pipewire-pulse
     paru -S pcmanfm brave-bin gnome-calculator-gtk3 nitrogen pavucontrol
     paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick
@@ -251,7 +262,7 @@ InstallingImportantPackages
 ##------------------------------##
 ## Installing Extra Application ##
 ##------------------------------##
-InstallingExtrasPackages() {
+function InstallingExtrasPackages() {
     paru -S discord
 
     echo ""
@@ -263,7 +274,7 @@ InstallingExtrasPackages() {
     paru -S blender obs-studio prismlauncher-bin simplescreenrecorder vlc
     paru -S gnome-text-editor eog proton-vpn-gtk-app file-roller vscodium-bin
     paru -S visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils
-    paru -S optimus-manager-qt-git gparted scrcpy veracrypt
+    paru -S optimus-manager-qt-git gparted scrcpy veracrypt ventoy-bin
 }
 
 # Prompt the user for confirmation
@@ -294,6 +305,15 @@ function Finishing() {
     # Setting enviorment files
     echo "Setting enviorment files.."
     sudo sh -c 'cat ./Themes/System\ Theme/enviroment >> /etc/environment'
+    
+    sleep 2
+
+    # Setting ntp auto time
+    echo ""
+    echo "Setting ntp auto time"
+    paru -S ntp
+    sudo systemctl enable --now ntpd
+    sudo timedatectl set-ntp true
 }
 Finishing
 
@@ -301,8 +321,7 @@ Finishing
 ## Note ##
 ##------##
 function Note(){
-    echo ""
-    echo ""
+    clear
     echo "---"
     echo Note:
     echo "Themes: When you restart your system, run lxappearance, kvantum-manager and set theme to dracula, icons to candy-icons, cursor to bibata-rainbot-modern"
