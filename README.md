@@ -17,7 +17,7 @@
 ```sh
 git clone https://github.com/BIGBEASTISHANK/dotfiles
 cd dotfiles
-echo ab3e2096d75ffd31b842f980f98ab035c8d3145252e6a7a03cce7b5870b9fdaa syscopy.sh | sha256sum -c
+echo 91d885529adafca36ed905e5f05f68b236f2d626efea048b80f6099948e8ddbb syscopy.sh | sha256sum -c
 chmod +x ./syscopy.sh
 ./syscopy.sh
 ```
