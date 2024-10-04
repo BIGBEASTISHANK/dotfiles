@@ -13,7 +13,7 @@
 > This is no more just a rice copy script. It has became a `nix.config` but for Arch user. You need to have a fresh Arch Install and then you can run `syscopy.sh` to get my entire range of software, tools & workflow enviorment. 
 
 ## Arch Linux
-- **Version:** `3.0.0`
+- **Version:** `3.0.1`
 ```sh
 git clone https://github.com/BIGBEASTISHANK/dotfiles
 cd dotfiles
