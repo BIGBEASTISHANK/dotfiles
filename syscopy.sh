@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 3.1.3"
+echo "Version 3.1.4"
 echo "---"
 sleep 5
 
@@ -250,7 +250,7 @@ echo "---"
 echo "Installing Important packages..."
 
 function InstallingImportantPackages() {
-    paru -S gvfs gvfs-mtp gvfs-smb less base-devel htop
+    paru -S gvfs gvfs-mtp gvfs-smb less man base-devel htop
     paru -S alsa-utils pipewire pipewire-alsa pipewire-jack pipewire-pulse
     paru -S pcmanfm brave-bin gnome-calculator-gtk3 nitrogen pavucontrol
     paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick
