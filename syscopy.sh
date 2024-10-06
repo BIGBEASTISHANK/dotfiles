@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 3.1.2"
+echo "Version 3.1.3"
 echo "---"
 sleep 5
 
@@ -223,7 +223,7 @@ function SettingUpThemes() {
     # SDDM Theme
     echo "Setting sddm themes"
     sleep 0.5
-    paru -S sddm sddm-sugar-candy-git
+    paru -S sddm sddm-sugar-candy-git qt5-quickcontrols2
     sudo cp -r ./Themes/SDDM\ Theme/sugar-candy-custom/ /usr/share/sddm/themes/
     sudo cp ./Themes/SDDM\ Theme/sddm.conf /etc/
     sudo systemctl enable sddm
