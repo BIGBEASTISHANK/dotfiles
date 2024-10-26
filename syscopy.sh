@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 3.1.5"
+echo "Version 3.1.6"
 echo "---"
 sleep 5
 
@@ -271,7 +271,7 @@ function InstallingExtrasPackages() {
     sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 
     paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity signal-desktop
-    paru -S blender obs-studio simplescreenrecorder vlc
+    paru -S blender obs-studio simplescreenrecorder vlc stacer-bin
     paru -S gnome-text-editor eog proton-vpn-gtk-app file-roller vscodium-bin
     paru -S visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils
     paru -S optimus-manager-qt-git gparted scrcpy veracrypt ventoy-bin
