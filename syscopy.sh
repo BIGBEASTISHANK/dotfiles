@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 3.1.6"
+echo "Version 3.1.7"
 echo "---"
 sleep 5
 
@@ -240,6 +240,8 @@ function SettingUpThemes() {
 
     mkdir ~/.config/Kvantum
     cp -r ./Themes/System\ Theme/Kvantum/* ~/.config/Kvantum/
+
+    paru -S kvantum-theme-dracula-git
 }
 SettingUpThemes
 
