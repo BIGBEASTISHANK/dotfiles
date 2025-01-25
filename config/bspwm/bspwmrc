@@ -1,7 +1,7 @@
 #! /bin/sh
 
 ## BSPWM Config
-bspc monitor -d        
+bspc monitor -d         
 
 ## Set initial border color
 bspc config normal_border_color "#515860"
@@ -15,22 +15,22 @@ bspc config window_gap          8
 bspc config split_ratio          0.5
 
 ## Applications rule
-# bspc rule -a "steam" desktop=^6
+# bspc rule -a "steam" desktop=^7
 bspc rule -a "stacer" state=floating
 bspc rule -a "scrcpy" state=floating
 # bspc rule -a "Brave-browser" desktop=^1
-bspc rule -a "Code" desktop=^3 follow=true
+bspc rule -a "Code" desktop=^4 follow=true
 # bspc rule -a "Pcmanfm" desktop=^2 follow=true
-bspc rule -a "discord" desktop=^5 follow=true
-# bspc rule -a "VSCodium" desktop=^3 follow=true
+bspc rule -a "discord" desktop=^6 follow=true
+# bspc rule -a "VSCodium" desktop=^4 follow=true
 bspc rule -a "Gnome-calculator" state=floating
-# bspc rule -a "Alacritty" desktop=^2 follow=true
-bspc rule -a "UnrealEditor" desktop=^4 follow=false
-bspc rule -a "UE4Editor" desktop=^4 follow=false
+# bspc rule -a "Alacritty" desktop=^3 follow=true
+bspc rule -a "UnrealEditor" desktop=^5 follow=false
+bspc rule -a "UE4Editor" desktop=^5 follow=false
 bspc rule -a "Com.github.sgpthomas.hourglass" state=floating
-# bspc rule -a "Protonvpn-app" state=floating desktop=^7 follow=false
+# bspc rule -a "Protonvpn-app" state=floating desktop=^8 follow=false
 bspc rule -a "Protonvpn-app" state=floating
-# bspc rule -a "SimpleScreenRecorder" state=floating desktop=^8 follow=true
+# bspc rule -a "SimpleScreenRecorder" state=floating desktop=^9 follow=true
 bspc rule -a "SimpleScreenRecorder" state=floating
 bspc rule -a "Signal" state=floating
 bspc rule -a "unityhub" state=floating
