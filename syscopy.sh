@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 3.2.2"
+echo "Version 3.2.3"
 echo "---"
 sleep 5
 
@@ -256,7 +256,7 @@ function InstallingImportantPackages() {
     paru -S alsa-utils pipewire pipewire-alsa pipewire-jack pipewire-pulse
     paru -S pcmanfm brave-bin gnome-calculator-gtk3 nitrogen pavucontrol
     paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick
-    paru -S xfce-polkit gnome-keyring selectdefaultapplication-git
+    paru -S xfce-polkit gnome-keyring selectdefaultapplication-git flatpak
     paru -S rofi-greenclip xorg-xinput xorg-xkill bat xclip rofi-emoji
 }
 InstallingImportantPackages
@@ -308,6 +308,13 @@ function Finishing() {
     # Setting enviorment files
     echo "Setting enviorment files.."
     sudo sh -c 'cat ./Themes/System\ Theme/enviroment >> /etc/environment'
+    
+    sleep 2
+    
+    # Setting up flathub
+    echo ""
+    echo "Setting up flathub.."
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     
     sleep 2
 
