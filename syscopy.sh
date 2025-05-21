@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 3.2.1"
+echo "Version 3.2.2"
 echo "---"
 sleep 5
 
@@ -277,6 +277,7 @@ function InstallingExtrasPackages() {
     paru -S gnome-text-editor hourglass eog proton-vpn-gtk-app file-roller vscodium-bin
     paru -S visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils
     paru -S optimus-manager-qt-git gparted scrcpy veracrypt ventoy-bin
+    paru -S onlyoffice-bin
 }
 
 # Prompt the user for confirmation
