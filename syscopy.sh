@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 3.2.3"
+echo "Version 3.2.5"
 echo "---"
 sleep 5
 
@@ -258,6 +258,7 @@ function InstallingImportantPackages() {
     paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick
     paru -S xfce-polkit gnome-keyring selectdefaultapplication-git flatpak
     paru -S rofi-greenclip xorg-xinput xorg-xkill bat xclip rofi-emoji
+    paru -S paru -S digimend-kernel-drivers-dkms-git xf86-input-wacom
 }
 InstallingImportantPackages
 
