@@ -5,6 +5,7 @@
 xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" Button 1 "button +1"
 xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" Button 2 "button +2"
 xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" Button 3 "button +3"
+xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" PressureCurve 100 0 100 0
 
 # Tablet
 xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 1 "key h"
