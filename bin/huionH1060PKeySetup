@@ -1,0 +1,21 @@
+##----------------------##
+## Drawing Tablet setup ##
+##----------------------##
+# Stylus
+xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" Button 1 "button +1"
+xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" Button 2 "button +2"
+xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" Button 3 "button +3"
+
+# Tablet
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 1 "key h"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 2 "key k"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 3 "key 1"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 8 "key 2"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 9 "key 3"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 10 "key 4"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 11 "key 5"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 12 "key 6"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 13 "key 7"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 14 "key 0"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 15 "key ctrl z"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 16 "key ctrl shift z"
