@@ -5,7 +5,7 @@
 ##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 3.2.5"
+echo "Version 3.3.6"
 echo "---"
 sleep 5
 
@@ -258,7 +258,7 @@ function InstallingImportantPackages() {
     paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick
     paru -S xfce-polkit gnome-keyring selectdefaultapplication-git flatpak
     paru -S rofi-greenclip xorg-xinput xorg-xkill bat xclip rofi-emoji
-    paru -S paru -S digimend-kernel-drivers-dkms-git xf86-input-wacom
+    paru -S digimend-kernel-drivers-dkms-git xf86-input-wacom
 }
 InstallingImportantPackages
 
@@ -325,6 +325,12 @@ function Finishing() {
     paru -S ntp
     sudo systemctl enable --now ntpd
     sudo timedatectl set-ntp true
+
+    # Allowing user to change brightness with polybar
+    echo ""
+    echo "Allowing user to change brightness with polybar"
+    sudo echo 'ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness"' >> /etc/udev/rules.d/90-backlight.rules
+    sudo usermod -aG video $USER
 }
 Finishing
 
