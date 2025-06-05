@@ -1,17 +1,11 @@
 #!/bin/bash
 
-##---------##
-## Credits ##
-##---------##
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 3.3.6"
+echo "Version 4.0.0"
 echo "---"
 sleep 5
 
-##-----------------##
-## Installing paru ##
-##-----------------##
 if which paru >/dev/null 2>&1; then
     echo "Paru already installed, skipping installation."
     echo "---"
@@ -25,327 +19,244 @@ else
     rm -rf paru
 fi
 
-##-----------------##
-## Updating system ##
-##-----------------##
 echo "Updating the system..."
 sleep 0.5
 paru
 
-##---------------------------##
-## Installing BlackArch Repo ##
-##---------------------------##
-function InstallBlackArchRepo(){
-	curl -O https://blackarch.org/strap.sh
-	chmod +x strap.sh
-	sudo ./strap.sh
-	paru
+install_blackarch_repo() {
+    curl -O https://blackarch.org/strap.sh
+    chmod +x strap.sh
+    sudo ./strap.sh
+    rm -f strap.sh
+    paru
 }
-InstallBlackArchRepo
+install_blackarch_repo
 
-##------------------##
-## Adding bin files ##
-##------------------##
 echo "---"
 echo "Adding bin files..."
 sleep 1
-function BinFiles() {
-    chmod +x ./bin/*
-    sudo cp ./bin/* /usr/bin/
+add_bin_files() {
+    if [ -d "./bin" ]; then
+        chmod +x ./bin/*
+        sudo cp ./bin/* /usr/bin/
+    else
+        echo "Warning: ./bin directory not found"
+    fi
 }
-BinFiles
+add_bin_files
 
-##-------------------##
-## Setting up config ##
-##-------------------##
 echo "---"
 echo "Setting up configs..."
 echo "---"
 sleep 1.2
 
-function SettingUpConfigs() {
-    # Alacritty
-    echo ""
-    echo "##-----------##"
-    echo "## Alacritty ##"
-    echo "##-----------##"
-    echo ""
-    paru -S alacritty
-    mkdir ~/.config/alacritty/
-    cp ./config/alacritty/* ~/.config/alacritty/
-
-    # Bspwm
-    echo ""
-    echo "##-------##"
-    echo "## Bspwm ##"
-    echo "##-------##"
-    echo ""
-    paru -S bspwm
-    mkdir ~/.config/bspwm/
-    chmod +x ./config/bspwm/*
-    cp ./config/bspwm/* ~/.config/bspwm/
-
-    # Dunst
-    echo ""
-    echo "##-------##"
-    echo "## Dunst ##"
-    echo "##-------##"
-    echo ""
-    paru -S dunst
-    mkdir ~/.config/dunst/
-    chmod +x ./config/dunst/*
-    cp ./config/dunst/* ~/.config/dunst/
-
-    # Fastfetch
-    echo ""
-    echo "##-----------##"
-    echo "## Fastfetch ##"
-    echo "##-----------##"
-    echo ""
-    paru -S fastfetch
-    mkdir ~/.config/fastfetch/
-    cp ./config/fastfetch/* ~/.config/fastfetch/
-
-    # Fish
-    echo ""
-    echo "##------##"
-    echo "## Fish ##"
-    echo "##------##"
-    echo ""
-    paru -S fish
-    mkdir ~/.config/fish/
-    cp ./config/fish/* ~/.config/fish/
-
-    # Nvim
-    echo ""
-    echo "##--------##"
-    echo "## Neovim ##"
-    echo "##--------##"
-    echo ""
-    paru -S neovim
-    mkdir ~/.config/nvim/
-    cp ./config/nvim/* ~/.config/nvim/
-
-    # Picom
-    echo ""
-    echo "##-------##"
-    echo "## Picom ##"
-    echo "##-------##"
-    echo ""
-    paru -S picom
-    mkdir ~/.config/picom/
-    cp ./config/picom/* ~/.config/picom/
-
-    # Polybar
-    echo ""
-    echo "##---------##"
-    echo "## Polybar ##"
-    echo "##---------##"
-    echo ""
-    paru -S polybar
-    mkdir ~/.config/polybar/
-    chmod +x ./config/polybar/*
-    cp ./config/polybar/* ~/.config/polybar/
-
-    # Rofi
-    echo ""
-    echo "##------##"
-    echo "## Rofi ##"
-    echo "##------##"
-    echo ""
-    paru -S rofi
-    mkdir ~/.config/rofi/
-    cp ./config/rofi/* ~/.config/rofi/
-
-    # Sxhkd
-    echo ""
-    echo "##-------##"
-    echo "## Sxhkd ##"
-    echo "##-------##"
-    echo ""
-    paru -S sxhkd
-    mkdir ~/.config/sxhkd/
-    chmod +x ./config/sxhkd/*
-    cp ./config/sxhkd/* ~/.config/sxhkd/
-
-    # Vencord
+setup_configs() {
+    local configs=(
+        "alacritty:alacritty"
+        "bspwm:bspwm"
+        "dunst:dunst"
+        "fastfetch:fastfetch"
+        "fish:fish"
+        "nvim:neovim"
+        "picom:picom"
+        "polybar:polybar"
+        "rofi:rofi"
+        "sxhkd:sxhkd"
+    )
+    
+    for config in "${configs[@]}"; do
+        IFS=':' read -r dir package <<< "$config"
+        echo ""
+        echo "##$(printf '%*s' ${#dir} | tr ' ' '-')##"
+        echo "## ${dir^} ##"
+        echo "##$(printf '%*s' ${#dir} | tr ' ' '-')##"
+        echo ""
+        
+        paru -S "$package"
+        mkdir -p ~/.config/"$dir"/
+        
+        if [ -d "./config/$dir" ]; then
+            if [[ "$dir" =~ ^(bspwm|dunst|polybar|sxhkd)$ ]]; then
+                chmod +x ./config/"$dir"/*
+            fi
+            cp -r ./config/"$dir"/* ~/.config/"$dir"/
+        fi
+    done
+    
     echo ""
     echo "##---------##"
     echo "## Vencord ##"
     echo "##---------##"
     echo ""
-    mkdir ~/.config/Vencord/
-    cp -r ./config/Vencord/* ~/.config/Vencord/
+    mkdir -p ~/.config/Vencord/
+    if [ -d "./config/Vencord" ]; then
+        cp -r ./config/Vencord/* ~/.config/Vencord/
+    fi
     echo "Vencord themes setup done..."
 }
-SettingUpConfigs
+setup_configs
 
-##-----------------------##
-## Setting up wallpapers ##
-##-----------------------##
 echo "---"
 echo "Setting up wallpaper..."
 echo "---"
+mkdir -p ~/Pictures/
+if [ -d "./Wallpaper" ]; then
+    cp -r ./Wallpaper/ ~/Pictures/
+fi
 
-mkdir ~/Pictures/
-cp -r ./Wallpaper/ ~/Pictures/
-
-##--------##
-## Themes ##
-##--------##
 echo "Adding themes to respective places..."
 echo "---"
 sleep 0.5
 
-function SettingUpThemes() {
-    # Fonts
+setup_themes() {
     echo "Installing fonts..."
     paru -S ttf-font-awesome noto-fonts noto-fonts-emoji
-
-    # Cursor
+    
     echo "---"
-    echo "Coping Cursors.."
-    sudo cp -r ./Themes/Cursor/* /usr/share/icons/
-    echo "gtk-cursor-theme-name=Bibata-Rainbow-Modern" >> /home/$USER/.config/gtk-3.0/settings.ini
+    echo "Copying Cursors..."
+    if [ -d "./Themes/Cursor" ]; then
+        sudo cp -r ./Themes/Cursor/* /usr/share/icons/
+        mkdir -p ~/.config/gtk-3.0/
+        echo "gtk-cursor-theme-name=Bibata-Rainbow-Modern" >> ~/.config/gtk-3.0/settings.ini
+    fi
     sleep 0.3
-
-    # Grub thems
-    echo "Setting grub theme.."
-    sudo cp -r ./Themes/Grub\ Theme/darkmatter/ /boot/grub/themes/
-    sudo cp -r ./Themes/Grub\ Theme/darkmatter/ /usr/share/grub/themes/
+    
+    echo "Setting grub theme..."
+    if [ -d "./Themes/Grub Theme/darkmatter" ]; then
+        sudo mkdir -p /boot/grub/themes/ /usr/share/grub/themes/
+        sudo cp -r "./Themes/Grub Theme/darkmatter/" /boot/grub/themes/
+        sudo cp -r "./Themes/Grub Theme/darkmatter/" /usr/share/grub/themes/
+    fi
     paru -S grub-customizer
-
-    # Icons
+    
     echo "---"
-    echo "Coping Icons.."
-    sudo tar xvf ./Themes/Icons/candy-icons.tar -C /usr/share/icons/
-
-    # SDDM Theme
+    echo "Copying Icons..."
+    if [ -f "./Themes/Icons/candy-icons.tar" ]; then
+        sudo tar xf ./Themes/Icons/candy-icons.tar -C /usr/share/icons/
+    fi
+    
     echo "Setting sddm themes"
     sleep 0.5
     paru -S sddm sddm-sugar-candy-git qt5-quickcontrols2
-    sudo cp -r ./Themes/SDDM\ Theme/sugar-candy-custom/ /usr/share/sddm/themes/
-    sudo cp ./Themes/SDDM\ Theme/sddm.conf /etc/
+    if [ -d "./Themes/SDDM Theme/sugar-candy-custom" ]; then
+        sudo cp -r "./Themes/SDDM Theme/sugar-candy-custom/" /usr/share/sddm/themes/
+    fi
+    if [ -f "./Themes/SDDM Theme/sddm.conf" ]; then
+        sudo cp "./Themes/SDDM Theme/sddm.conf" /etc/
+    fi
     sudo systemctl enable sddm
-
-    # System Themes
+    
     echo "---"
     echo "Setting system themes"
     sleep 0.5
-
-    paru -S kvantum kvantum-qt5 lxappearance qt5ct qt6ct
-
-    sudo cp -r ./Themes/System\ Theme/GTK/* /usr/share/themes/
-    paru -S dracula-gtk-theme
-
-    mkdir ~/.config/Kvantum
-    cp -r ./Themes/System\ Theme/Kvantum/* ~/.config/Kvantum/
-
-    paru -S kvantum-theme-dracula-git
+    
+    paru -S kvantum kvantum-qt5 lxappearance qt5ct qt6ct dracula-gtk-theme kvantum-theme-dracula-git
+    
+    if [ -d "./Themes/System Theme/GTK" ]; then
+        sudo cp -r "./Themes/System Theme/GTK"/* /usr/share/themes/
+    fi
+    
+    mkdir -p ~/.config/Kvantum
+    if [ -d "./Themes/System Theme/Kvantum" ]; then
+        cp -r "./Themes/System Theme/Kvantum"/* ~/.config/Kvantum/
+    fi
 }
-SettingUpThemes
+setup_themes
 
-##----------------------------------##
-## Installing Important Application ##
-##----------------------------------##
 echo "---"
 echo "Installing Important packages..."
 
-function InstallingImportantPackages() {
-    paru -S gvfs gvfs-mtp gvfs-smb less man base-devel htop
-    paru -S alsa-utils pipewire pipewire-alsa pipewire-jack pipewire-pulse
-    paru -S pcmanfm brave-bin gnome-calculator-gtk3 nitrogen pavucontrol
-    paru -S flameshot rofi-greenclip xorg-xsetroot network-manager-applet gpick
-    paru -S xfce-polkit gnome-keyring selectdefaultapplication-git flatpak
-    paru -S rofi-greenclip xorg-xinput xorg-xkill bat xclip rofi-emoji
-    paru -S digimend-kernel-drivers-dkms-git xf86-input-wacom
+install_important_packages() {
+    local essential_packages=(
+        "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "base-devel" "htop"
+        "alsa-utils" "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
+        "pcmanfm" "brave-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
+        "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet" "gpick"
+        "xfce-polkit" "gnome-keyring" "selectdefaultapplication-git" "flatpak"
+        "xorg-xinput" "xorg-xkill" "bat" "xclip" "rofi-emoji"
+        "digimend-kernel-drivers-dkms-git" "xf86-input-wacom"
+    )
+    
+    for package in "${essential_packages[@]}"; do
+        paru -S "$package"
+    done
 }
-InstallingImportantPackages
+install_important_packages
 
-##------------------------------##
-## Installing Extra Application ##
-##------------------------------##
-function InstallingExtrasPackages() {
-    paru -S discord
-
+install_extra_packages() {
+    local extra_packages=(
+        "discord" "virtualbox" "virtualbox-host-modules-arch" "anytype-bin"
+        "kdenlive" "audacity" "signal-desktop" "blender" "obs-studio"
+        "simplescreenrecorder" "vlc" "stacer-bin" "gnome-text-editor"
+        "hourglass" "eog" "proton-vpn-gtk-app" "file-roller" "vscodium-bin"
+        "visual-studio-code-bin" "cava" "nvidia" "nvidia-settings" "nvidia-utils"
+        "optimus-manager-qt-git" "gparted" "scrcpy" "veracrypt" "ventoy-bin"
+        "onlyoffice-bin"
+    )
+    
+    for package in "${extra_packages[@]}"; do
+        paru -S "$package"
+    done
+    
     echo ""
-    echo "Installing vencord, Please follow the instruction.."
+    echo "Installing vencord, Please follow the instruction..."
     echo "---"
     sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
-
-    paru -S virtualbox virtualbox-host-modules-arch anytype-bin kdenlive audacity signal-desktop
-    paru -S blender obs-studio simplescreenrecorder vlc stacer-bin
-    paru -S gnome-text-editor hourglass eog proton-vpn-gtk-app file-roller vscodium-bin
-    paru -S visual-studio-code-bin cava nvidia nvidia-settings nvidia-utils
-    paru -S optimus-manager-qt-git gparted scrcpy veracrypt ventoy-bin
-    paru -S onlyoffice-bin
 }
 
-# Prompt the user for confirmation
 echo ""
 echo "---"
 read -p "Do you want to install the extra softwares? (yes/no): " answer
-
-# Convert the answer to lowercase for easier comparison
 answer=${answer,,}
 
-# Check if the user agrees (yes)
 if [[ "$answer" == "yes" ]]; then
-    InstallingExtrasPackages
+    install_extra_packages
 else
     echo "---"
-    echo "Skipping installation.."
+    echo "Skipping installation..."
 fi
 
-##-----------##
-## Finishing ##
-##-----------##
 echo "---"
-echo "Finishing........"
+echo "Finishing..."
 echo "---"
 sleep 1
 
-function Finishing() {
-    # Setting enviorment files
-    echo "Setting enviorment files.."
-    sudo sh -c 'cat ./Themes/System\ Theme/enviroment >> /etc/environment'
+finishing_setup() {
+    echo "Setting environment files..."
+    if [ -f "./Themes/System Theme/enviroment" ]; then
+        sudo sh -c 'cat "./Themes/System Theme/enviroment" >> /etc/environment'
+    fi
     
     sleep 2
     
-    # Setting up flathub
     echo ""
-    echo "Setting up flathub.."
+    echo "Setting up flathub..."
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     
     sleep 2
-
-    # Setting ntp auto time
+    
     echo ""
     echo "Setting ntp auto time"
     paru -S ntp
     sudo systemctl enable --now ntpd
     sudo timedatectl set-ntp true
-
-    # Allowing user to change brightness with polybar
+    
     echo ""
     echo "Allowing user to change brightness with polybar"
-    sudo echo 'ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness"' >> /etc/udev/rules.d/90-backlight.rules
-    sudo usermod -aG video $USER
+    echo 'ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness"' | sudo tee /etc/udev/rules.d/90-backlight.rules > /dev/null
+    sudo usermod -aG video "$USER"
 }
-Finishing
+finishing_setup
 
-##------##
-## Note ##
-##------##
-function Note(){
+display_notes() {
     clear
     echo "---"
-    echo Note:
-    echo "Themes: When you restart your system, run lxappearance, kvantum-manager and set theme to dracula, icons to candy-icons, cursor to bibata-rainbot-modern"
+    echo "Note:"
+    echo "Themes: When you restart your system, run lxappearance, kvantum-manager and set theme to dracula, icons to candy-icons, cursor to bibata-rainbow-modern"
     echo ""
     echo "Grub: After setting themes, run grub-customizer and set theme to dark matter"
     echo ""
     echo "Reboot for changes to take place"
     echo "---"
 }
-Note
+display_notes
