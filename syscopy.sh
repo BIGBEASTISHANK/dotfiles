@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.1.0 - Auto Installer"
+echo "Version 5.2.1 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -27,7 +27,7 @@ for arg in "$@"; do
             ;;
         --install-extras=false)
             INSTALL_EXTRA_SOFTWARE=false
-            ;;
+	    ;;
         *)
             echo "Error: Invalid argument: $arg"
             usage
@@ -168,9 +168,9 @@ EOF
 
     # System Themes
     paru -S --noconfirm kvantum kvantum-qt5 lxappearance qt5ct qt6ct dracula-gtk-theme kvantum-theme-dracula-git
-    [ -d "./Themes/System Theme/GTK" ] && sudo cp -r ./Themes/System Theme/GTK/* /usr/share/themes/ && mkdir $HOME/.themes && cp -r ./Themes/System Theme/GTK/* $HOME/.themes/
+    [ -d "./Themes/System Theme/GTK" ] && sudo cp -r ./Themes/System\ Theme/GTK/* /usr/share/themes/ && mkdir $HOME/.themes && cp -r ./Themes/System\ Theme/GTK/* $HOME/.themes/
     mkdir -p $HOME/.config/Kvantum
-    [ -d "./Themes/System Theme/Kvantum" ] && cp -r ./Themes/System Theme/Kvantum/* $HOME/.config/Kvantum/
+    [ -d "./Themes/System Theme/Kvantum" ] && cp -r ./Themes/System\ Theme/Kvantum/* $HOME/.config/Kvantum/
 }
 setup_themes
 
@@ -180,7 +180,7 @@ install_important_packages() {
     local packages=(
         "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "htop"
         "alsa-utils" "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
-        "pcmanfm" "brave-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
+        "pcmanfm" "brave-bin" "librewolf-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
         "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet"
         "gpick" "xfce-polkit" "gnome-keyring" "selectdefaultapplication-git"
         "flatpak" "xorg-xinput" "xorg-xkill" "bat" "xclip" "rofi-emoji"
