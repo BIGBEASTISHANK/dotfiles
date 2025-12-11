@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.2.1 - Auto Installer"
+echo "Version 5.2.2 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -178,7 +178,7 @@ setup_themes
 echo "Installing important packages..."
 install_important_packages() {
     local packages=(
-        "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "htop"
+        "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "htop" "lsd"
         "alsa-utils" "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
         "pcmanfm" "brave-bin" "librewolf-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
         "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet"
