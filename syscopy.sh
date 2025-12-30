@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.2.2 - Auto Installer"
+echo "Version 5.3.3 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -117,7 +117,7 @@ mkdir -p $HOME/Pictures/Wallpapers
 # Themes
 echo "Setting up themes..."
 setup_themes() {
-    paru -S --noconfirm ttf-font-awesome noto-fonts noto-fonts-emoji
+    paru -S --noconfirm ttf-font-awesome-5 noto-fonts noto-fonts-emoji
 
     # Cursor
     if [ -d "./Themes/Cursor" ]; then
@@ -153,7 +153,12 @@ EOF
 Name=Default
 Inherits=Bibata-Rainbow-Modern
 EOF
-        
+	sudo rm /usr/share/icons/default/index.theme
+	sudo tee /usr/share/icons/default/index.theme > /dev/null <<EOF
+[Icon Theme]
+Inherits=bibata-rainbow-modern
+EOF
+
     fi
 
     # SDDM Theme
@@ -182,7 +187,7 @@ install_important_packages() {
         "alsa-utils" "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
         "pcmanfm" "brave-bin" "librewolf-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
         "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet"
-        "gpick" "xfce-polkit" "gnome-keyring" "selectdefaultapplication-git"
+        "gpick" "xfce-polkit" "gnome-keyring" "kwallet-pam" "selectdefaultapplication-git"
         "flatpak" "xorg-xinput" "xorg-xkill" "bat" "xclip" "rofi-emoji"
         "digimend-kernel-drivers-dkms-git" "xf86-input-wacom"
     )
