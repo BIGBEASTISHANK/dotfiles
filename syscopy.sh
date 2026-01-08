@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.3.4 - Auto Installer"
+echo "Version 5.4.1 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -184,7 +184,8 @@ echo "Installing important packages..."
 install_important_packages() {
     local packages=(
         "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "htop" "lsd"
-        "alsa-utils" "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
+	"alsa-utils" "alsa-ucm-conf" "sof-firmware"
+	"pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
         "pcmanfm" "brave-bin" "librewolf-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
         "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet"
         "gpick" "xfce-polkit" "gnome-keyring" "kwallet-pam" "selectdefaultapplication-git"
@@ -242,6 +243,15 @@ finishing_setup() {
     sudo usermod -aG video "$USER"
 }
 finishing_setup
+
+# Setting up intel audio drivers
+echo "Configuring Intel audio drivers..."
+sudo modprobe -r snd_hda_intel 2>/dev/null || true
+sudo modprobe -r snd_sof_pci_intel_tgl 2>/dev/null || true
+sudo modprobe snd_hda_intel || true
+sudo modprobe snd_sof_pci_intel_tgl || true
+sudo mkinitcpio -p linux
+
 
 # Final notes
 clear
