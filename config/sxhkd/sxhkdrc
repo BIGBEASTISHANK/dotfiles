@@ -17,6 +17,14 @@ XF86AudioRaiseVolume
 XF86AudioMute
 	amixer -c 1 set Speaker toggle
 
+# Brightness up
+XF86MonBrightnessUp
+	brightnessctl s 1%+
+
+# Brightness down
+XF86MonBrightnessDown
+	brightnessctl s 1%-
+
 ###########
 ## Super ##
 ###########

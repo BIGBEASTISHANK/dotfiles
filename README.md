@@ -33,12 +33,12 @@ These dotfiles serve as a complete system configuration setup for Arch Linux use
 
 ### 📦 Install Script
 
-**Current Version:** `5.4.1 - Auto Installer`
+**Current Version:** `5.4.2 - Auto Installer`
 
 ```bash
 git clone https://github.com/BIGBEASTISHANK/dotfiles
 cd dotfiles
-echo fa0051a681a02455ff0d04c39f83469a9e6a0799f4e138b84568d7d513b5cbe8 syscopy.sh | sha256sum -c
+echo 2864358c427e8cf758652beaeb139216f5973799e506346c733964bd0d0f0998 syscopy.sh | sha256sum -c
 chmod +x ./syscopy.sh
 ./syscopy.sh --install-extras=false
 ```

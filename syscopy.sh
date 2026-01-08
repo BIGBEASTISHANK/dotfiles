@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.4.1 - Auto Installer"
+echo "Version 5.4.2 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -184,12 +184,12 @@ echo "Installing important packages..."
 install_important_packages() {
     local packages=(
         "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "htop" "lsd"
-	"alsa-utils" "alsa-ucm-conf" "sof-firmware"
-	"pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
+	    "alsa-utils" "alsa-ucm-conf" "sof-firmware"
+	    "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
         "pcmanfm" "brave-bin" "librewolf-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
         "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet"
         "gpick" "xfce-polkit" "gnome-keyring" "kwallet-pam" "selectdefaultapplication-git"
-        "flatpak" "xorg-xinput" "xorg-xkill" "bat" "xclip" "rofi-emoji"
+        "flatpak" "xorg-xinput" "xorg-xkill" "bat" "xclip" "rofi-emoji" "brightnessctl"
         "digimend-kernel-drivers-dkms-git" "xf86-input-wacom" "acpi"
     )
 
