@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.3.3 - Auto Installer"
+echo "Version 5.3.4 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -189,7 +189,7 @@ install_important_packages() {
         "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet"
         "gpick" "xfce-polkit" "gnome-keyring" "kwallet-pam" "selectdefaultapplication-git"
         "flatpak" "xorg-xinput" "xorg-xkill" "bat" "xclip" "rofi-emoji"
-        "digimend-kernel-drivers-dkms-git" "xf86-input-wacom"
+        "digimend-kernel-drivers-dkms-git" "xf86-input-wacom" "acpi"
     )
 
     for pkg in "${packages[@]}"; do
