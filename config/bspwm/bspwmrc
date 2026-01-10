@@ -66,9 +66,10 @@ $HOME/.config/dunst/batteryStatus &
 
 nitrogen --restore &
 
-xinput set-prop SINOWEALTH\ 2.4G\ Wireless\ Receiver libinput\ Accel\ Profile\ Enabled 0 1 0
+xinput set-prop "Compx 2.4G Wireless Receiver" "libinput Accel Profile Enabled" 0 1 0
 xinput set-prop "CUST0001:01 04F3:3282 Touchpad" "libinput Natural Scrolling Enabled" 1
 xinput set-prop "CUST0001:01 04F3:3282 Touchpad" "libinput Tapping Enabled" 1
+xinput set-prop "CUST0001:01 04F3:3282 Touchpad" "libinput Disable While Typing Enabled" 0
 
 ##------------##
 ## Essentials ##
