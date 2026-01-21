@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.4.2 - Auto Installer"
+echo "Version 5.4.3 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -183,9 +183,9 @@ setup_themes
 echo "Installing important packages..."
 install_important_packages() {
     local packages=(
-        "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "htop" "lsd"
-	    "alsa-utils" "alsa-ucm-conf" "sof-firmware"
-	    "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
+        "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "htop" "lsd" "ttf-jetbrains-mono-nerd"
+        "alsa-utils" "alsa-ucm-conf" "sof-firmware"
+        "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
         "pcmanfm" "brave-bin" "librewolf-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
         "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet"
         "gpick" "xfce-polkit" "gnome-keyring" "kwallet-pam" "selectdefaultapplication-git"
