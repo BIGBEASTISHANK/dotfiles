@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.4.4 - Auto Installer"
+echo "Version 5.4.5 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -205,7 +205,7 @@ install_extra_packages() {
         "discord" "virtualbox" "virtualbox-host-modules-arch" "anytype-bin"
         "kdenlive" "audacity" "signal-desktop" "blender" "obs-studio"
         "simplescreenrecorder" "vlc" "stacer-bin" "gnome-text-editor" "xournalpp"
-        "hourglass" "eog" "proton-vpn-gtk-app" "file-roller" "vscodium-bin"
+        "hourglass" "eog" "proton-vpn-gtk-app" "file-roller" "vscodium-bin" "yarn"
         "visual-studio-code-bin" "cava" "nvidia" "nvidia-settings" "nvidia-utils"
         "optimus-manager-qt-git" "gparted" "scrcpy" "veracrypt" "ventoy-bin"
         "onlyoffice-bin" "libreoffice-fresh"
