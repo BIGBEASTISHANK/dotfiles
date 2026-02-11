@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.4.5 - Auto Installer"
+echo "Version 5.4.6 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -117,7 +117,7 @@ mkdir -p $HOME/Pictures/Wallpapers
 # Themes
 echo "Setting up themes..."
 setup_themes() {
-    paru -S --noconfirm ttf-font-awesome-5 noto-fonts noto-fonts-emoji
+    paru -S --noconfirm ttf-font-awesome-5 noto-fonts noto-fonts-emoji otf-font-awesome
 
     # Cursor
     if [ -d "./Themes/Cursor" ]; then
