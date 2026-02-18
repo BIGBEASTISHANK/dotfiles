@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.4.6 - Auto Installer"
+echo "Version 5.4.7 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -187,7 +187,7 @@ install_important_packages() {
         "alsa-utils" "alsa-ucm-conf" "sof-firmware"
         "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
         "pcmanfm" "brave-bin" "librewolf-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
-        "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet"
+        "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet" "localsend-bin"
         "gpick" "xfce-polkit" "gnome-keyring" "kwallet-pam" "selectdefaultapplication-git"
         "flatpak" "xorg-xinput" "xorg-xkill" "bat" "xclip" "rofi-emoji" "brightnessctl"
         "digimend-kernel-drivers-dkms-git" "xf86-input-wacom" "acpi"
