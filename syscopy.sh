@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.4.7 - Auto Installer"
+echo "Version 5.5.0 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -184,7 +184,7 @@ echo "Installing important packages..."
 install_important_packages() {
     local packages=(
         "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "htop" "lsd" "ttf-jetbrains-mono-nerd"
-        "alsa-utils" "alsa-ucm-conf" "sof-firmware"
+        "alsa-utils" "alsa-ucm-conf" "sof-firmware" "xss-lock" "feh"
         "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
         "pcmanfm" "brave-bin" "librewolf-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
         "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet" "localsend-bin"
@@ -241,6 +241,8 @@ finishing_setup() {
     echo 'ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness"' | \
         sudo tee /etc/udev/rules.d/90-backlight.rules > /dev/null
     sudo usermod -aG video "$USER"
+
+    betterlockscreen -u "$HOME/Pictures/Wallpapers/Pink Blue 1080.jpg" --blur 3 --dim 30
 }
 finishing_setup
 

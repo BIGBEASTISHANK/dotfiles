@@ -56,6 +56,10 @@ super + period
 super + Escape
 	bspc node -p cancel
 
+# Lock screen
+super + l
+	betterlockscreen -l blur
+
 ###################
 ## Super + Shift ##
 ###################
