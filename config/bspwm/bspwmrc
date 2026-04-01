@@ -66,6 +66,10 @@ $HOME/.config/dunst/batteryStatus &
 
 nitrogen --restore &
 
+pkill xss-lock
+xss-lock --transfer-sleep-lock -- \
+    sh -c 'betterlockscreen -l blur; pkill -USR1 xss-lock' &
+
 xinput set-prop "Compx 2.4G Wireless Receiver" "libinput Accel Profile Enabled" 0 1 0
 xinput set-prop "CUST0001:01 04F3:3282 Touchpad" "libinput Natural Scrolling Enabled" 1
 xinput set-prop "CUST0001:01 04F3:3282 Touchpad" "libinput Tapping Enabled" 1
