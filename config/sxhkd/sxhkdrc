@@ -60,6 +60,14 @@ super + Escape
 super + l
 	betterlockscreen -l blur
 
+# Focus desktop on laptop
+super + {1-9}
+	bspc desktop -f eDP-1:'^{1-9}'
+
+# Focus node (laptop)
+super + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east} -m eDP-1
+
 ###################
 ## Super + Shift ##
 ###################
@@ -99,16 +107,20 @@ super + shift + {p}
 super + shift + a
 	bspc node @/ -B
 
+# Move window to laptop
+super + shift + {1-9}
+	bspc node -d eDP-1:'^{1-9}'
+
+# Move node (laptop)
+super + shift + {Left,Down,Up,Right}
+	bspc node -s {west,south,north,east} -m eDP-1
+
 #######################
 ## Super + {_,Shift} ##
 #######################
 # Focus the node in the given direction
 super + {_,shift} + {Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
-
-# Focus or send to the given desktop
-super + {_,shift} + {1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
 
 ##################
 ## Super + Ctrl ##
@@ -146,3 +158,22 @@ super + shift + ctrl + x
 # contract a window by moving one of its side inward
 super + ctrl + alt + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+####################
+## Second Monitor ##
+####################
+# Focus desktop on HDMI
+super + alt + {1-9}
+	bspc desktop -f HDMI-1-0:'^{1-9}'
+
+# Move window to HDMI
+super + alt + shift + {1-9}
+	bspc node -d HDMI-1-0:'^{1-9}'
+
+# Focus node (HDMI)
+super + alt + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east} -m HDMI-1-0
+
+# Move node (HDMI)
+super + alt + shift + {Left,Down,Up,Right}
+	bspc node -s {west,south,north,east} -m HDMI-1-0

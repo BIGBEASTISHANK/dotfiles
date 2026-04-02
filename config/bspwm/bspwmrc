@@ -1,7 +1,8 @@
 #! /bin/sh
 
 ## BSPWM Config
-bspc monitor -d         
+bspc monitor eDP-1 -d         
+bspc monitor HDMI-1-0 -d         
 
 ## Set initial border color
 bspc config normal_border_color "#515860"
@@ -34,6 +35,7 @@ bspc rule -a "Protonvpn-app" state=floating
 bspc rule -a "SimpleScreenRecorder" state=floating
 bspc rule -a "Signal" state=floating
 bspc rule -a "unityhub" state=floating
+bspc rule -a "org-tlauncher-tlauncher-rmo-TLauncher" state=floating desktop=^7
 
 
 
@@ -42,6 +44,10 @@ bspc rule -a "unityhub" state=floating
 ##----------------##
 ## System Startup ##
 ##----------------##
+xrandr \
+  --output eDP-1 --mode 2560x1600 --pos 2560x0 \
+  --output HDMI-1-0 --mode 2560x1440 --pos 0x160
+
 pkill sxhkd
 sxhkd &
 
@@ -79,7 +85,8 @@ xinput set-prop "CUST0001:01 04F3:3282 Touchpad" "libinput Disable While Typing 
 ## Essentials ##
 ##------------##
 pkill polybar
-polybar &
+MONITOR=eDP-1 polybar main &
+MONITOR=HDMI-1-0 polybar main &
 
 pkill nm-applet
 nm-applet &
