@@ -44,9 +44,15 @@ bspc rule -a "org-tlauncher-tlauncher-rmo-TLauncher" state=floating desktop=^7
 ##----------------##
 ## System Startup ##
 ##----------------##
+# Horizontal Monitor 
 xrandr \
   --output eDP-1 --mode 2560x1600 --pos 2560x0 \
-  --output HDMI-1-0 --mode 2560x1440 --pos 0x160
+  --output HDMI-1-0 --mode 2560x1440 --rotate normal --pos 0x160
+
+# Vertical Monitor
+#xrandr \
+#  --output HDMI-1-0 --mode 2560x1440 --rotate left --pos 0x0 \
+#  --output eDP-1 --mode 2560x1600 --pos 1440x0
 
 pkill sxhkd
 sxhkd &
