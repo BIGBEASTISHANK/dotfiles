@@ -29,13 +29,14 @@ bspc rule -a "Gnome-calculator" state=floating
 bspc rule -a "UnrealEditor" desktop=^5 follow=false
 bspc rule -a "UE4Editor" desktop=^5 follow=false
 bspc rule -a "com.github.sgpthomas.hourglass" state=floating
-# bspc rule -a "Protonvpn-app" state=floating desktop=^8 follow=false
-bspc rule -a "Protonvpn-app" state=floating
+# bspc rule -a "protonvpn-app" state=floating desktop=^8 follow=false
+bspc rule -a "protonvpn-app" state=floating
 # bspc rule -a "SimpleScreenRecorder" state=floating desktop=^9 follow=true
 bspc rule -a "SimpleScreenRecorder" state=floating
 bspc rule -a "Signal" state=floating
 bspc rule -a "unityhub" state=floating
 bspc rule -a "org-tlauncher-tlauncher-rmo-TLauncher" state=floating desktop=^7
+bspc rule -a "anytype" desktop=^2 
 
 
 

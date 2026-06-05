@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.5.2 - Auto Installer"
+echo "Version 5.6.3 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -185,7 +185,7 @@ install_important_packages() {
     local packages=(
         "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "htop" "lsd" "ttf-jetbrains-mono-nerd"
         "alsa-utils" "alsa-ucm-conf" "sof-firmware" "feh" "betterlockscreen" "xss-lock"
-        "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse"
+        "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse" "blueman"
         "pcmanfm" "brave-bin" "librewolf-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
         "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet" "localsend-bin"
         "gpick" "xfce-polkit" "gnome-keyring" "kwallet-pam" "selectdefaultapplication-git"
@@ -203,12 +203,12 @@ install_important_packages
 install_extra_packages() {
     local extras=(
         "discord" "virtualbox" "virtualbox-host-modules-arch" "anytype-bin"
-        "kdenlive" "audacity" "signal-desktop" "blender" "obs-studio"
+        "kdenlive" "audacity" "signal-desktop" "blender" "obs-studio" "docker"
         "simplescreenrecorder" "vlc" "stacer-bin" "gnome-text-editor" "xournalpp"
         "hourglass" "eog" "proton-vpn-gtk-app" "file-roller" "vscodium-bin" "yarn"
         "visual-studio-code-bin" "cava" "nvidia" "nvidia-settings" "nvidia-utils"
         "optimus-manager-qt-git" "gparted" "scrcpy" "veracrypt" "ventoy-bin"
-        "onlyoffice-bin" "libreoffice-fresh"
+        "onlyoffice-bin" "libreoffice-fresh" "localsend"
     )
 
     for pkg in "${extras[@]}"; do
@@ -242,9 +242,11 @@ finishing_setup() {
         sudo tee /etc/udev/rules.d/90-backlight.rules > /dev/null
     sudo usermod -aG video "$USER"
 
+    sudo systemctl enable bluetooth.service
+
     betterlockscreen -u "$HOME/Pictures/Wallpapers/Pink Blue 1080.jpg" --blur 3 --dim 30
 
-    systemctl enable betterlockscreen@$USER.service --now
+    sudo systemctl enable betterlockscreen@$USER.service --now
 
     echo -e "\nHandleLidSwitch=lock\nHandleLidSwitchExternalPower=lock" | sudo tee -a /etc/systemd/logind.conf
 }

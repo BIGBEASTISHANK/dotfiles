@@ -7,15 +7,15 @@ Print
 
 # Volume up
 XF86AudioLowerVolume
-	amixer -c 1 set Speaker 1-
+	pactl set-sink-volume @DEFAULT_SINK@ +1%
 	
 # Volume down
 XF86AudioRaiseVolume
-	amixer -c 1 set Speaker 1+
+	pactl set-sink-volume @DEFAULT_SINK@ -1%
 
 # Volume mute
 XF86AudioMute
-	amixer -c 1 set Speaker toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Brightness up
 XF86MonBrightnessUp

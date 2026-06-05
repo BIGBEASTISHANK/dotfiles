@@ -38,7 +38,7 @@ These dotfiles serve as a complete system configuration setup for Arch Linux use
 ```bash
 git clone https://github.com/BIGBEASTISHANK/dotfiles
 cd dotfiles
-echo df63a5e3bf0b090de46a79ff6072816c37fc2ebbb0df1b4b32aaf7a83fa347ef syscopy.sh | sha256sum -c
+echo a9a9a3dacbe66924009e5169daf52a45104ad25738756ee30ef456c56adb44cc syscopy.sh | sha256sum -c
 chmod +x ./syscopy.sh
 ./syscopy.sh --install-extras=false
 ```
