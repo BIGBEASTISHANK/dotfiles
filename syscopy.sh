@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.6.3 - Auto Installer"
+echo "Version 5.7.3 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -247,8 +247,6 @@ finishing_setup() {
     betterlockscreen -u "$HOME/Pictures/Wallpapers/Pink Blue 1080.jpg" --blur 3 --dim 30
 
     sudo systemctl enable betterlockscreen@$USER.service --now
-
-    echo -e "\nHandleLidSwitch=lock\nHandleLidSwitchExternalPower=lock" | sudo tee -a /etc/systemd/logind.conf
 }
 finishing_setup
 

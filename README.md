@@ -4,7 +4,8 @@
 
 These dotfiles serve as a complete system configuration setup for Arch Linux users using the **Linux kernel** and **NVIDIA drivers** (not compatible with `linux-lts`). This is more than a rice or aesthetic setup—think of it as a `nix.config` for Arch. It provides a fully configured, ready-to-use workflow and development environment.
 
-> ⚠️ **Important:** This setup is tailored **exclusively for Arch Linux** with the **standard `linux` kernel** and **NVIDIA graphics**. Do **not** use it with `linux-lts`.
+> [!IMPORTANT]
+> This setup is tailored **exclusively for Arch Linux** with the **standard `linux` kernel** and **NVIDIA graphics**. Do **not** use it with `linux-lts`.
 
 ## 🖥️ Preview
 
@@ -22,7 +23,8 @@ These dotfiles serve as a complete system configuration setup for Arch Linux use
 
 ## ⚙️ Installation
 
-> 📝 **Note:** This script is intended to be used **after** a fresh Arch Linux installation.
+> [!NOTE]
+> This script is intended to be used **after** a fresh Arch Linux installation.
 
 ### ✅ Requirements
 
@@ -33,12 +35,12 @@ These dotfiles serve as a complete system configuration setup for Arch Linux use
 
 ### 📦 Install Script
 
-**Current Version:** `5.5.2 - Auto Installer`
+**Current Version:** `5.7.3 - Auto Installer`
 
 ```bash
 git clone https://github.com/BIGBEASTISHANK/dotfiles
 cd dotfiles
-echo a9a9a3dacbe66924009e5169daf52a45104ad25738756ee30ef456c56adb44cc syscopy.sh | sha256sum -c
+echo a645c626d6c982d9cce4e8ea6f242f8bdbb231aa34a7a4a7d754d946463e56be syscopy.sh | sha256sum -c
 chmod +x ./syscopy.sh
 ./syscopy.sh --install-extras=false
 ```
