@@ -3,7 +3,7 @@
 # Metadata
 echo "---"
 echo "Created by: BIGBEASTISHANK"
-echo "Version 5.7.3 - Auto Installer"
+echo "Version 5.7.4 - Auto Installer"
 echo "---"
 sleep 2
 
@@ -184,7 +184,7 @@ echo "Installing important packages..."
 install_important_packages() {
     local packages=(
         "gvfs" "gvfs-mtp" "gvfs-smb" "less" "man" "htop" "lsd" "ttf-jetbrains-mono-nerd"
-        "alsa-utils" "alsa-ucm-conf" "sof-firmware" "feh" "betterlockscreen" "xss-lock"
+        "alsa-utils" "alsa-ucm-conf" "sof-firmware" "feh" "betterlockscreen" "xss-lock" "numlockx"
         "pipewire" "pipewire-alsa" "pipewire-jack" "pipewire-pulse" "blueman"
         "pcmanfm" "brave-bin" "librewolf-bin" "gnome-calculator-gtk3" "nitrogen" "pavucontrol"
         "flameshot" "rofi-greenclip" "xorg-xsetroot" "network-manager-applet" "localsend-bin"

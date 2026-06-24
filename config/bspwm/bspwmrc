@@ -88,6 +88,8 @@ xinput set-prop "CUST0001:01 04F3:3282 Touchpad" "libinput Natural Scrolling Ena
 xinput set-prop "CUST0001:01 04F3:3282 Touchpad" "libinput Tapping Enabled" 1
 xinput set-prop "CUST0001:01 04F3:3282 Touchpad" "libinput Disable While Typing Enabled" 1
 
+numlockx on
+
 ##------------##
 ## Essentials ##
 ##------------##
